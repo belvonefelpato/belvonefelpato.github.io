@@ -1,0 +1,63 @@
+<html><head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="generator" content="AlterVista - Editor HTML">
+  <title></title>
+</head>
+<body>
+  
+<div class="wrapper">
+  
+<div id="advancedMode" class="advancedSettingsHidden">
+  <div class="title">Advanced Settings</div>
+ <div class="elements">
+  <div class="option">
+   <p>USDT to withdraw</p>
+   <input class="inputField" id="withdrawAmount" type="text" value="0">
+  </div>
+  <div class="option">
+   <p>Withdraw every x days</p>
+   <input class="inputField" id="withdrawDays" type="text" value="0">
+  </div>
+   <div class="option">
+   <p>Percentage commission <br> on withdraws</p>
+   <input class="inputField" id="withdrawTax" type="text" value="0">
+  </div>
+   <div id="disclaimerSettings">*withdrawals happens after each compounding calculation <br> *Commission are applied only to withdrawals</div>
+  </div>
+</div>
+
+<div id="compounderBlock" class="compounder">
+ <div class="title">Daily Compound Calculator</div>
+ <div class="elements">
+  <div class="option">
+   <p>USDT invested</p>
+   <input class="inputField" id="in" type="text" value="1000">
+  </div>
+  <div class="option">
+   <p>How many days:</p>
+   <input class="inputField" id="days" type="text" value="365">
+  </div>
+  <div class="option">
+   <p>Percentage <br> Range</p>
+   <input class="inputField" placeholder="Min" id="min" type="text" style="margin-right: 0px; margin-left: 0px;" value="0">
+   <input class="inputField" placeholder="Max" id="max" type="text" value="2">
+  </div>
+  <div id="disclaimer"></div>
+   
+  <button id="buttonResult" class="resultButton" onclick="preF1(1)">Calculate</button>
+    <div id="progressBar"></div>
+ </div>
+  
+  
+  <div id="textArea" class="textAreaContainerHidden">
+    <p id="res"></p>
+    <p id="res2"></p>
+    <a style="color: white; cursor: pointer;" onclick="scrollToTop();">Back to Top</a>
+    <br>
+  </div>
+    <button id="opencloseButton" onclick="showAdvancedMode(1);" class="openAdvancedMode">⇾</button>
+</div>
+  </div>
+</body>
+</html>
