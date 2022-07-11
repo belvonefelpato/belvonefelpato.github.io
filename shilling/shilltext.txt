@@ -1,0 +1,10 @@
+/s1
+/tTesto in alto
+/sTesto shilling dento il box
+/end
+
+/s2
+/tTesto in alto
+/sTesto shilling dentro il box
+/end
+
