@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+
+body{
+  background-color: #121622 !important;
+  color: white !important;
+  font-family: Rajdhani,serif !important;
+}
+
+.shilling-page{
+  text-align:center;
+}
+
+.page-title{
+  text-align: left;
+  font-size: 32px;
+  margin-left: 20%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+hr.new-line {
+  height: 5px; 
+  background: linear-gradient(90deg,#12ab9e,#8d358b);
+  border-radius: 5px;
+}
+
+hr.separate-writings {
+  margin: 50px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.writings{
+  margin-top: 50px;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: left;
+}
+
+p.desc{
+  font-size: 16px;
+}
+
+.shill{
+  margin-bottom: 20px !important;
+}
+
+pre {
+  white-space: pre-wrap;
+  background: rgba(0,0,0,0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 10px;
+  font-size: 16px;
+  color: rgba(0,252,222,.6);
+  border-radius: 5px;
+  word-wrap: normal;
+  overflow: auto;
+    overflow-y: auto;
+  overflow-y: hidden;
+}
+
+.btn{
+  z-index:100;
+  position: relative;
+  clip-path: inset(0% 0% 0% 0% round 0%);
+  border-radius: 31px;
+  width: 120px;
+  height: 40px;
+  border: 3px solid transparent;
+  background-origin: border-box;
+  background-clip: content-box,border-box;
+  box-shadow: inset -213px 0px 1px rgba(0,0,0,1);
+  background-image: linear-gradient(hsla(0,0%,100%,0),hsla(0,0%,100%,0)),linear-gradient(101deg,#12ab9e,#8d358b);
+  margin: 5px 10px 0 0;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: Rajdhani,serif;
+  line-height: 30px;
+  color: white;
+  cursor: pointer;
+  transition-property: width, box-shadow;
+  transition: all 0.5s ease;
+  transition-delay: width 0.3s;
+}
+.btn:hover{
+  box-shadow: inset 2px 1000px 5px rgba(0,0,0,0.7) !important;
+  transition: 0.5s !important;
+}
