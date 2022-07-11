@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+
+body{
+  background-color: #121622 !important;
+  color: white !important;
+  font-family: Rajdhani,serif !important;
+}
+
+.homepage{
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-option{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block-container{
+  padding: 30px;
+}
+
+#icon-image{
+  width: 160px;
+  height: 160px;
+  transition: 0.5s ease;
+}
+#icon-image:hover{
+  transform: translate(0, -10px) !important;
+  transition: 0.5 ease;
+}
+
+#open-page-btn{
+  z-index:100;
+  position: relative;
+  clip-path: inset(0% 0% 0% 0% round 0%);
+  border-radius: 31px;
+  width: 213px;
+  height: 50px;
+  border: 3px solid transparent;
+  background-origin: border-box;
+  background-clip: content-box,border-box;
+  box-shadow: inset -213px 0px 1px rgba(0,0,0,1);
+  background-image: linear-gradient(hsla(0,0%,100%,0),hsla(0,0%,100%,0)),linear-gradient(101deg,#12ab9e,#8d358b);
+  margin: 18px 0 0 0;
+  font-weight: 600;
+  font-size: 25px;
+  font-family: Rajdhani,serif;
+  line-height: 30px;
+  color: white;
+  cursor: pointer;
+  transition-property: width, box-shadow;
+  transition: all 0.5s ease;
+  transition-delay: width 0.3s;
+}
+#open-page-btn:hover{
+  box-shadow: inset 2px 1000px 5px rgba(0,0,0,0.7) !important;
+  transition: 0.5s !important;
+}
+
+#description{
+  font-size: 24px;
+}
+
