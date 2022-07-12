@@ -82,7 +82,7 @@ function setTxt(stxt){
 
 function write(i, t, b){
   
-  document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy"><input type="button" class="copy-text btn" onclick="window.location.href='+ "'" + 'https://twitter.com/intent/tweet?text=' + b.toString() + "'" + ';" value="Tweet it!"></div><hr class="separate-writings">'
+  document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + b.toString() + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
   
 }
 
