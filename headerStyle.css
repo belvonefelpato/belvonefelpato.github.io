@@ -2,5 +2,11 @@
   width: 100px;
   height: auto;
   clip-path: circle(50%);
+  margin: 10px;
+  transition: 0.5s ease;
 }
-
+#belvoneHeader:hover{
+  width: 120px;
+  clip-path: circle(43%);
+  transition: 0.5s ease;
+}
