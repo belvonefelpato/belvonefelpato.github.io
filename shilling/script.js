@@ -86,6 +86,7 @@ function write(i, t, b){
   bURLSpaces = bURLSpaces.replace(/(\r\n|\n|\r)/gm, '%0A')
   bURLSpaces = bURLSpaces.replaceAll(' ', '%20')
   bURLSpaces = bURLSpaces.replaceAll('#', '%23')
+    bURLSpaces = bURLSpaces.replaceAll('"', '%22')
   
     
   document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + bURLSpaces.toString() + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
