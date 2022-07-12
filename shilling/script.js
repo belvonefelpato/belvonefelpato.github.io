@@ -83,7 +83,7 @@ function setTxt(stxt){
 function write(i, t, b){
   
   var bURLSpaces = b;
-  bURLSpaces = bURLSpaces.replaceAll('\n', '%0A')
+  bURLSpaces = bURLSpaces.replace(/(\r\n|\n|\r)/gm, '%0A')
   bURLSpaces = bURLSpaces.replaceAll(' ', '%20')
   bURLSpaces = bURLSpaces.replaceAll('#', '%23')
   
