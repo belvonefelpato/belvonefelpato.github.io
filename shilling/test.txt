@@ -1,0 +1,12 @@
+/s1
+/tTesto in alto 1
+/tLOL
+/bTesto shilling dentro il box 1
+/f
+
+/s2
+/tTesto in alto 2
+/bTesto shilling dentro il box 2
+/bASDETE
+/f
+
