@@ -10,3 +10,9 @@
 /bASDETE
 /f
 
+/s3
+/tTesto in alto 3
+/bTesto shilling dentro il box 3 '\n'
+Ed ora sono a capo
+/f
+
