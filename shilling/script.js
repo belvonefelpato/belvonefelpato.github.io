@@ -44,6 +44,12 @@ function setTxt(stxt){
   for (let i = 0; i < stxt.length; i++){
     
       if(stxt.charAt(i) == '/'){
+          if(stxt.charAt(i+1) == '/' && stxt.charAt(i-1) == ':'){
+              buffer += stxt.charAt(i)
+              buffer += stxt.charAt(i+1)
+              i += 1
+              continue
+          }
         
         if(buffer !== ""){
           if(charControl == 'b') b = buffer
