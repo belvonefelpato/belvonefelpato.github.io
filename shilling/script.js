@@ -19,7 +19,7 @@ function retrieveText() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     // Here you can use the Data
                     txt = xmlhttp.responseText.toString()
-                    txt.replace("\n", "");
+                    txt.replace('\n', '');
                     setTxt(txt);
                 }
             }
@@ -82,7 +82,8 @@ function setTxt(stxt){
 
 function write(i, t, b){
   
-  document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + b.toString().replace(' ', '%20') + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
+  var bURLSpaces = b.replace(' ', )
+  document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + b.toString().replaceAll(' ', '%20') + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
   
 }
 
