@@ -71,8 +71,7 @@ function setTxt(stxt){
             break;
             
           case 'f':
-            charControl = 'e'
-            alert('chiamo write')
+            charControl = 'f'
             write(shillIndex, t, b)
             break;            
       }
@@ -96,5 +95,5 @@ function copyText(number) {
   navigator.clipboard.writeText(copyText);
 
   /* Alert the copied text */
-  alert("Copied the text: " + copyText);
+  alert("Copied: " + copyText);
 } 

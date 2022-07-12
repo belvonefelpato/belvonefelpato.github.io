@@ -1,6 +1,5 @@
 /s1
 /tTesto in alto 1
-/tASD
 /bTesto shilling dentro il box 1
 /f
 
