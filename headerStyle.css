@@ -1,14 +1,11 @@
 #belvoneHeader{
-  position: relative;
-  top: 20px;
-  left: 20px;
+  margin: 10px;
   width: 100px;
   height: auto;
   clip-path: circle(50%);
   transition: 0.5s ease;
 }
 #belvoneHeader:hover{
-  width: 120px;
-  clip-path: circle(43%);
+  clip-path: circle(60%);
   transition: 0.5s ease;
 }
