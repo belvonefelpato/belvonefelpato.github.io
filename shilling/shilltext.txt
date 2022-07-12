@@ -1,10 +1,17 @@
 /s1
-/tTesto in alto 1
-/bTesto shilling dentro il box 1
+/tHeader text 1
+/bShilling text inside box 1
 /f
 
 /s2
-/tTesto in alto 2
-/bTesto shilling dentro il box 2
+/tHeader text 2
+/bShilling text inside box 2
+You can add paragraph just by pressing enter
+Like this
+/f
+
+/s3
+/tHeader text 3
+/bShilling text inside box 3
 /f
 
