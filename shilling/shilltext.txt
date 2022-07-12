@@ -1,10 +1,10 @@
 /s1
-/tTesto in alto
-/bTesto shilling dento il box
+/tTesto in alto 1
+/bTesto shilling dentro il box 1
 /f
 
 /s2
-/tTesto in alto
-/bTesto shilling dentro il box
+/tTesto in alto 2
+/bTesto shilling dentro il box 2
 /f
 
