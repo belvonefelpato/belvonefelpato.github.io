@@ -88,12 +88,11 @@ function setTxt(stxt){
 
 function write(i, t, b){
   
-  var tURIEncoded = encodeURIComponent(t);
   var bURIEncoded = encodeURIComponent(b);
   bURIEncoded = bURIEncoded.replace(/(\r\n|\n|\r)/gm, '%0A')
   
     
-  document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + tURIEncoded + '</p><pre id="pre' + i + '">' + bURIEncoded + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + bURIEncoded + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
+  document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + bURIEncoded + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
   
 }
 
