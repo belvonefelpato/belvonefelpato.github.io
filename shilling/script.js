@@ -66,12 +66,12 @@ function setTxt(stxt){
             
           case 's':
             charControl = 's'
-            shillIndex = i+2
             i += 2
             break;
             
           case 'f':
             charControl = 'f'
+            shillIndex++;
             write(shillIndex, t, b)
             break;            
       }
