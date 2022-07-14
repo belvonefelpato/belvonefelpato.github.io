@@ -76,6 +76,7 @@ function setTxt(stxt){
             break;
             
           case 'f':
+            buffer = ""
             charControl = 'f'
             shillIndex++;
             write(shillIndex, t, b)
