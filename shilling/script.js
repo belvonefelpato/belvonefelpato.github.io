@@ -88,7 +88,9 @@ function setTxt(stxt){
 
 function write(i, t, b){
   
-  var bURIEncoded = encodeURIComponent(b);
+  if(t === null) t = ""
+  if(b === null) b = ""
+  var bURIEncoded = encodeURIComponent(b)
   bURIEncoded = bURIEncoded.replace(/(\r\n|\n|\r)/gm, '%0A')
   
     
