@@ -44,12 +44,6 @@ function setTxt(stxt){
   for (let i = 0; i < stxt.length; i++){
     
       if(stxt.charAt(i) == '§'){
-          if(stxt.charAt(i+1) == '/' && stxt.charAt(i-1) == ':'){
-              buffer += stxt.charAt(i)
-              buffer += stxt.charAt(i+1)
-              i += 1
-              continue
-          }
         
         if(buffer !== ""){
           if(charControl == 'b') b = buffer
@@ -94,9 +88,9 @@ function write(i, t, b){
   var bURIEncoded = encodeURIComponent(b)
   bURIEncoded = bURIEncoded.replace(/(\r\n|\n|\r)/gm, '%0A')
   
-    
-  document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + bURIEncoded + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
-  
+  if(t !== "" && b !== ""){
+      document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + bURIEncoded + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
+  }
 }
 
 
