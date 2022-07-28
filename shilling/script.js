@@ -43,6 +43,8 @@ function setTxt(stxt){
   
   for (let i = 0; i < stxt.length; i++){
     
+      if(stxt.charAt(i) == '\n' && stxt.charAt(i+1) == '\n') i += 2
+      
       if(stxt.charAt(i) == '§'){
         
         if(buffer !== ""){
