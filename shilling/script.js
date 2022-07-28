@@ -19,7 +19,7 @@ function retrieveText() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     // Here you can use the Data
                     txt = xmlhttp.responseText.toString()
-                    txt.replace('\n', '');
+                    txt.replace(/(\r\n|\n|\r)/gm, '')
                     setTxt(txt);
                 }
             }
