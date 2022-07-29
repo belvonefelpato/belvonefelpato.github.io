@@ -12,7 +12,7 @@ window.addEventListener('load',
     initial = document.getElementById("in").value
     days = document.getElementById("days").value
 
-    var href = site_url
+    var href = window.location.href
 
     if(href.indexOf("?") > -1) retrieveUrlParam()
     else addOrUpdateUrlParam()
