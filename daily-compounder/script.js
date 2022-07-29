@@ -112,10 +112,10 @@ function f1(number){
         
       
         if((result - parseFloat(withdrawAmount) > 0)){
-          pres2Text.innerHTML += "Day "+(x+1)+": " + result.toFixed(2) + " USDT" + " - with " + random + "% gain"+"<br>"
+          pres2Text.innerHTML += "Day "+(x+1)+": " + result.toFixed(2).toLocaleString('en') + " USDT" + " - with " + random + "% gain"+"<br>"
         }
         else{
-            pres2Text.innerHTML += "Last Day after withdrawal: " + nocompoundResult.toFixed(2) + " USDT" + " - with " + random + "% gain"+"<br>"
+            pres2Text.innerHTML += "Last Day after withdrawal: " + nocompoundResult.toFixed(2).toLocaleString('en') + " USDT" + " - with " + random + "% gain"+"<br>"
             pres2Text.innerHTML += "MAKE SURE TO HAVE MONEY AVAILABLE TO WITHDRAW" + "<br>"
           }
         
@@ -166,7 +166,7 @@ function f1(number){
       
       
         textResults.innerHTML += "======= RESULTS ========" + "<br><br>"
-        textResults.innerHTML += "Amount Invested: " + initial.toLocaleString('en') +" USDT" + "<br>"
+        textResults.innerHTML += "Amount Invested: " + initial.toFixed(2).toLocaleString('en') +" USDT" + "<br>"
         if(revenueOnly > 0) textResults.innerHTML += "Money gained after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en') +" USDT" + "<br>"
         else textResults.innerHTML += "Money lost after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en') +" USDT" + "<br>"
         
@@ -179,15 +179,15 @@ function f1(number){
       
         textResults.innerHTML += "Total amount after " + days + " days: " + finalGain.toFixed(2).toLocaleString('en') + " USDT" + "<br>" 
         
-        if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Amount Withdrew: " + totalWithdrew.toLocaleString('en') + " USDT"
+        if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Amount Withdrew: " + totalWithdrew.toFixed(2).toLocaleString('en') + " USDT"
         if(totalWithdrew > 0 && withdrawTax > 0){
-          textResults.innerHTML += "<br>" + "Amount Withdrew after commission: " + totalAmountWithdrewAfterTax.toLocaleString('en') + " USDT"
-          textResults.innerHTML += "<br>" + "Single withdraw after commission: " + singleWithdrawAfterTax.toLocaleString('en') + " USDT" + "<br><br>"
+          textResults.innerHTML += "<br>" + "Amount Withdrew after commission: " + totalAmountWithdrewAfterTax.toFixed(2).toLocaleString('en') + " USDT"
+          textResults.innerHTML += "<br>" + "Single withdraw after commission: " + singleWithdrawAfterTax.toFixed(2).toLocaleString('en') + " USDT" + "<br><br>"
         }
       
         if(withdrawTax > 0){
           textResults.innerHTML += "Total of " + withdrawTax + "% commission paid: " + parseFloat(totalTaxPaid).toFixed(2).toLocaleString('en') +" USDT" + "<br>"
-          textResults.innerHTML += "Commission paid each " + withdrawDays + " days: " + parseFloat(singleTaxPaid).toLocaleString('en') + " USDT"
+          textResults.innerHTML += "Commission paid each " + withdrawDays + " days: " + parseFloat(singleTaxPaid).toFixed(2).toLocaleString('en') + " USDT"
         }
       
         textResults.innerHTML += "<br>"
