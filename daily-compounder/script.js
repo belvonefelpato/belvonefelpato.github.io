@@ -1,3 +1,25 @@
+var min
+var max
+var initial
+var days
+
+var site_url = "https://belvonefelpato.github.io/daily-compounder/"
+
+window.addEventListener('load', 
+  function() { 
+    min = document.getElementById("min").value
+    max = document.getElementById("max").value
+    initial = document.getElementById("in").value
+    days = document.getElementById("days").value
+
+    var href = site_url
+
+    if(href.indexOf("?") > -1) retrieveUrlParam()
+    else addOrUpdateUrlParam()
+
+  }, false);
+
+
 setInterval(function(){
   var min = document.getElementById("min").value
   var max = document.getElementById("max").value
@@ -263,5 +285,25 @@ function showAdvancedMode(number){
   }
   
   
+}
+
+
+function addOrUpdateUrlParam()
+{
+   var combo = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&max=" + max
+
+    if(href.indexOf("?") > -1) window.history.pushState( null, '', site_url );
+    window.history.pushState( null, '', combo );
+    //window.location.href = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&max=" + max
+}
+
+function retrieveUrlParam(){
+  var queryString = window.location.search
+  var urlParams = new URLSearchParams(queryString)
+
+  document.getElementById("min").value = urlParams.get('min')
+  document.getElementById("max").value = urlParams.get('max')
+  document.getElementById("in").value = urlParams.get('initial')
+  document.getElementById("days").value = urlParams.get('days')
 }
 
