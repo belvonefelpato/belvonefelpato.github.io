@@ -166,7 +166,7 @@ function f1(number){
       
       
         textResults.innerHTML += "======= RESULTS ========" + "<br><br>"
-        textResults.innerHTML += "Amount Invested: " + initial.toFixed(2).toLocaleString('en') +" USDT" + "<br>"
+        textResults.innerHTML += "Amount Invested: " + parseFloat(initial).toFixed(2).toLocaleString('en') +" USDT" + "<br>"
         if(revenueOnly > 0) textResults.innerHTML += "Money gained after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en') +" USDT" + "<br>"
         else textResults.innerHTML += "Money lost after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en') +" USDT" + "<br>"
         
