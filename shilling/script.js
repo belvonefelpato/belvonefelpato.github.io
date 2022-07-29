@@ -43,7 +43,7 @@ function setTxt(stxt){
   
   for (let i = 0; i < stxt.length; i++){
     
-      if(stxt.charAt(i) == '\n' && stxt.charAt(i+1) == '\n') i++
+      if(stxt.charAt(i) == '/(\r\n|\n|\r)/gm' && stxt.charAt(i+1) == '/(\r\n|\n|\r)/gm') i++
       
       if(stxt.charAt(i) == '§'){
         
