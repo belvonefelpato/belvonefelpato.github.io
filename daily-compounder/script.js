@@ -75,6 +75,9 @@ function f1(number){
   
   initial = document.getElementById("in").value
   days = document.getElementById("days").value
+
+  addOrUpdateUrlParam()
+
   x = 0
   percentages = 0.0
   result=parseFloat(initial)
@@ -292,7 +295,7 @@ function addOrUpdateUrlParam()
 {
    var combo = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&max=" + max
 
-    if(href.indexOf("?") > -1) window.history.pushState( null, '', site_url );
+    if(window.location.href.indexOf("?") > -1) window.history.pushState( null, '', site_url );
     window.history.pushState( null, '', combo );
     //window.location.href = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&max=" + max
 }
