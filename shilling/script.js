@@ -20,7 +20,8 @@ function retrieveText() {
                     // Here you can use the Data
                     txt = xmlhttp.responseText.toString()
                     txt.replace(/(\r\n|\n|\r)/gm, '')
-                    setTxt(txt);
+
+                    setTxt(removeReturns(txt));
                 }
             }
 
@@ -30,6 +31,16 @@ function retrieveText() {
   
   
   
+}
+
+function removeReturns(t){
+  var buffer = "";
+  for (let i = 0; i< t.length; i++){
+    if(t.charAt(i) == /(\r\n|\n|\r)/gm && t.charAt(i+1) == /(\r\n|\n|\r)/gm) i++;
+    else buffer += t.charAt(i);
+  }
+
+  return buffer;
 }
 
 function setTxt(stxt){
