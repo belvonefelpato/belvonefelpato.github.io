@@ -100,9 +100,9 @@ pre {
   }
 
   .btn{
-    width: 220px;
-    height: 70px;
-    font-size: 43px;
+    width: 210px !important;
+    height: 70px !important;
+    font-size: 43px !important;
   }
 
 }
