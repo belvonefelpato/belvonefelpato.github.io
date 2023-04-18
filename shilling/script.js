@@ -2,9 +2,8 @@ var defaultTagsToAdd = "\n\n@CivFund $CIV #0ne #Civilization\ncivfund.org"
 var tweetsWithLessThan = [];
 var characterCount = 280;
 
-document.getElementById('switch-text').innerHTML = "Less than " + characterCount.toString() + " characters" 
-
 window.onload = function() {
+    document.getElementById('switch-text').innerHTML = "Less than " + characterCount.toString() + " characters" 
     retrieveText();
 }
 
