@@ -1,4 +1,4 @@
-var defaultTagsToAdd = "\n\n$CIV #Civilization\ncivfund.org"
+var defaultTagsToAdd = "\n\n@CivFund $CIV #0ne #Civilization #ETH #BTC\ncivfund.org"
 
 window.onload = function() {
     retrieveText();
