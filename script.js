@@ -3,6 +3,7 @@ function loaderFn() {
 }
 
 function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("loader-cover").style.display = "none";
+    document.getElementById('belvoneHeader').style.display = "unset";
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("loader-cover").style.display = "none";
 }
