@@ -1,5 +1,8 @@
 var defaultTagsToAdd = "\n\n@CivFund $CIV #0ne #Civilization\ncivfund.org"
-//var readMoreCount = 50;
+var tweetsWithLessThan = null;
+var characterCount = 280;
+
+document.getElementById('switch-text').innerHTML = "Less than " + characterCount.toString() + " characters" 
 
 window.onload = function() {
     retrieveText();
@@ -110,6 +113,7 @@ function write(i, t, b){
   
   if(t !== "" && b !== ""){
       document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + bURIEncoded + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
+      if(b.length > characterCount) tweetsWithLessThan.push("shill" + i.toString());
   }
 }
 
@@ -126,6 +130,16 @@ function copyText(number) {
       alert("something went wrong");
     });
 }
+
+function checkUnCheck(){
+  if(tweetsWithLessThan.length !== 0){
+    for(let i=0; i<tweetsWithLessThan.length; i++){
+      if(document.getElementById('switch-input').checked) document.getElementById(tweetsWithLessThan[i]).style.display = "none"
+      else document.getElementById(tweetsWithLessThan[i]).style.display = "unset"
+    }
+  }
+}
+  
 
 /*function ReadMoreFn() {
   var dots = document.getElementById("dots");
