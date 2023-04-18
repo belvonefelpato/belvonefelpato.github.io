@@ -1,4 +1,4 @@
-var defaultTagsToAdd = "\n\n@CivFund $CIV #0ne #Civilization #WeAreCiv #ETH #BTC\ncivfund.org"
+var defaultTagsToAdd = "\n\n@CivFund $CIV #0ne #Civilization\ncivfund.org"
 //var readMoreCount = 50;
 
 window.onload = function() {
