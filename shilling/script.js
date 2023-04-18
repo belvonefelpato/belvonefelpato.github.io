@@ -141,7 +141,7 @@ function checkUnCheck(){
 }
 
 function loaderFn() {
-  setTimeout(showPage, 1000);
+  setTimeout(showPage, 3000);
 }
 
 function showPage() {
