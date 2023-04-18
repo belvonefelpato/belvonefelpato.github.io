@@ -90,8 +90,9 @@ function setTxt(stxt){
             charControl = 'f'
             shillIndex++;
             b += defaultTagsToAdd;
+            t += " - (total characters: " + b.length + ")"
             //if(b.length > readMoreCount-1) b += '</span><a id="read-more" onclick="ReadMoreFn">read more</a>'
-            write(shillIndex, t + " (total characters: " + b.length + ")", b)
+            write(shillIndex, t, b)
             break;            
       }
     }
