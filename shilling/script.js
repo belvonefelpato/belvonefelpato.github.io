@@ -1,5 +1,3 @@
-import "../script";
-
 var defaultTagsToAdd = "\n\n@CivFund $CIV #0ne #Civilization\ncivfund.org"
 var tweetsWithLessThan = [];
 var characterCount = 280;
@@ -140,6 +138,16 @@ function checkUnCheck(){
       else document.getElementById(tweetsWithLessThan[i]).style.display = "unset"
     }
   }
+}
+
+function loaderFn() {
+  setTimeout(showPage, 1000);
+}
+
+function showPage() {
+    document.getElementById('belvoneHeader').style.display = "unset";
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("loader-cover").style.display = "none";
 }
   
 
