@@ -113,11 +113,9 @@ function write(i, t, b){
 
 function copyText(number) {
   var id = "pre" + number
-  var copyText = document.getElementById(id);
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
+  var copyText = document.getElementById(id).innerHTML;
   navigator.clipboard
-    .writeText(copyText.value)
+    .writeText(copyText)
     .then(() => {
       alert("Shilling text copied");
     })
