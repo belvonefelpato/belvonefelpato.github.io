@@ -1,7 +1,5 @@
-var myTimeout;
-
 function loaderFn() {
-  myTimeout = setTimeout(showPage, 2000);
+  setTimeout(showPage, 1000);
 }
 
 function showPage() {
