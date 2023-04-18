@@ -85,3 +85,24 @@ pre {
   box-shadow: inset 2px 1000px 5px rgba(0,0,0,0.7) !important;
   transition: 0.5s !important;
 }
+
+@media only screen and (max-width: 600px){
+  .page-title{
+    font-size: 60px;
+  }
+
+  p.desc{
+    font-size: 50px;
+  }
+
+  pre{
+    font-size: 32px;
+  }
+
+  .btn{
+    width: 220px;
+    height: 70px;
+    font-size: 43px;
+  }
+
+}
