@@ -115,7 +115,7 @@ function copyText(number) {
   var id = "pre" + number
   var copyText = document.getElementById(id).innerHTML;
   navigator.clipboard
-    .writeText(copyText)
+    .writeText(copyText + defaultTagsToAdd)
     .then(() => {
       alert("Shilling text copied");
     })
