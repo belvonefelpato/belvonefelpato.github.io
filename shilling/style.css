@@ -6,6 +6,16 @@ body{
   font-family: Rajdhani,serif !important;
 }
 
+#more {display: none;}
+
+#read-more{
+  cursor: pointer;
+  color: white;
+}
+#read-more:hover{
+  color:#12ab9e;
+}
+
 .shilling-page{
   text-align:center;
 }
@@ -103,6 +113,10 @@ pre {
     width: 210px !important;
     height: 70px !important;
     font-size: 43px !important;
+  }
+
+  #read-more{
+    cursor: default;
   }
 
 }

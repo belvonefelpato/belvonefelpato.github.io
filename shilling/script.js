@@ -1,4 +1,5 @@
 var defaultTagsToAdd = "\n\n@CivFund $CIV #0ne #Civilization #WeAreCiv #ETH #BTC\ncivfund.org"
+var readMoreCount = 280;
 
 window.onload = function() {
     retrieveText();
@@ -58,6 +59,8 @@ function setTxt(stxt){
   for (let i = 0; i < stxt.length; i++){
     
     if(stxt.charAt(i) == /[\n\r]/gm && stxt.charAt(i+1) == /[\n\r]/gm) i++;
+    
+    if(i == readMoreCount-1) b += '<span id="dots">...</span><span id="more">'
       
       if(stxt.charAt(i) == '§'){
         
@@ -89,7 +92,9 @@ function setTxt(stxt){
             buffer = ""
             charControl = 'f'
             shillIndex++;
-            write(shillIndex, t, b + defaultTagsToAdd)
+            b += defaultTagsToAdd;
+            if(b.length > readMoreCount-1) b += '</span>'
+            write(shillIndex, t, b)
             break;            
       }
     }
@@ -106,7 +111,7 @@ function write(i, t, b){
   bURIEncoded = bURIEncoded.replace(/[\n\r]/gm, '%0A')
   
   if(t !== "" && b !== ""){
-      document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + bURIEncoded + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
+      document.getElementById('writings').innerHTML += '<div id="shill' + i + '"><p id="desc">' + t + '</p><pre id="pre' + i + '">' + b + '<a id="read-more" onclick="ReadMoreFn">read more</a>' + '</pre><input type="button" class="copy-text btn" onclick="copyText(' + i + ');"value="Copy" /><input type="button" class="copy-text btn" onclick="window.location.href=' + "'" + 'https://twitter.com/intent/tweet?text=' + bURIEncoded + "'" + ';" value="Tweet it!" /></div><hr class="separate-writings">'
   }
 }
 
@@ -122,4 +127,20 @@ function copyText(number) {
     .catch(() => {
       alert("something went wrong");
     });
+}
+
+function ReadMoreFn() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("read-more");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = " read less"; 
+    moreText.style.display = "inline";
+  }
 }
