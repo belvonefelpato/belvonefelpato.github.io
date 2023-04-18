@@ -100,7 +100,7 @@ function write(i, t, b){
   if(t === null) t = ""
   if(b === null) b = ""
 
-  var defaultTagsToAdd = "$CIV #Civilization\ncivfund.org"
+  var defaultTagsToAdd = "\n$CIV #Civilization\ncivfund.org"
 
   var bURIEncoded = encodeURIComponent(b + " " + defaultTagsToAdd)
   bURIEncoded = bURIEncoded.replace(/[\n\r]/gm, '%0A')
