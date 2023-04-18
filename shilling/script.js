@@ -110,11 +110,15 @@ function write(i, t, b){
 
 function copyText(number) {
   var id = "pre" + number
-  var copyText = document.getElementById(id).innerHTML;
-
-   /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
-
-  /* Alert the copied text */
-  alert("Copied: " + copyText);
-} 
+  var copyText = document.getElementById(id);
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard
+    .writeText(copyText.value)
+    .then(() => {
+      alert("Shilling text copied");
+    })
+    .catch(() => {
+      alert("something went wrong");
+    });
+}
