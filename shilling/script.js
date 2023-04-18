@@ -26,8 +26,8 @@ function retrieveText() {
             }
 
             // Send a request
-            //xmlhttp.open("GET", "https://docs.google.com/document/d/1IzBp8nhbGh6XxH4epfW6G1Wh5mDTPwsRAauCBYqaDD0/export?format=txt", true);
-            xmlhttp.open("GET", "https://belvonefelpato.github.io/shilling/shilltext.txt", true);
+            xmlhttp.open("GET", "https://docs.google.com/document/d/1IzBp8nhbGh6XxH4epfW6G1Wh5mDTPwsRAauCBYqaDD0/export?format=rtf", true);
+            //xmlhttp.open("GET", "https://belvonefelpato.github.io/shilling/shilltext.txt", true);
             xmlhttp.send();
   
   
