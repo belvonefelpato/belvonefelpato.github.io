@@ -1,5 +1,5 @@
 var defaultTagsToAdd = "\n\n@CivFund $CIV #0ne #Civilization\ncivfund.org"
-var tweetsWithLessThan = null;
+var tweetsWithLessThan = [];
 var characterCount = 280;
 
 document.getElementById('switch-text').innerHTML = "Less than " + characterCount.toString() + " characters" 
