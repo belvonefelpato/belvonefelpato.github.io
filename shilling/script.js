@@ -1,3 +1,5 @@
+var defaultTagsToAdd = "\n\n$CIV #Civilization\ncivfund.org"
+
 window.onload = function() {
     retrieveText();
 }
@@ -87,7 +89,7 @@ function setTxt(stxt){
             buffer = ""
             charControl = 'f'
             shillIndex++;
-            write(shillIndex, t, b)
+            write(shillIndex, t, b + defaultTagsToAdd)
             break;            
       }
     }
@@ -100,9 +102,7 @@ function write(i, t, b){
   if(t === null) t = ""
   if(b === null) b = ""
 
-  var defaultTagsToAdd = "\n$CIV #Civilization\ncivfund.org"
-
-  var bURIEncoded = encodeURIComponent(b + " " + defaultTagsToAdd)
+  var bURIEncoded = encodeURIComponent(b)
   bURIEncoded = bURIEncoded.replace(/[\n\r]/gm, '%0A')
   
   if(t !== "" && b !== ""){
