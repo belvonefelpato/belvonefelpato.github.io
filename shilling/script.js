@@ -113,7 +113,7 @@ function copyText(number) {
   var copyText = document.getElementById(id).innerHTML;
 
    /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText);
+  navigator.clipboard.writeText(copyText.value);
 
   /* Alert the copied text */
   alert("Copied: " + copyText);
