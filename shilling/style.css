@@ -242,6 +242,7 @@ input:checked + .slider:before {
 
 .dropdown-content a:hover {
   background-color: #16dbca;
+  border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 

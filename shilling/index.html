@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<div id="loader-cover"><div id="loader"></div></div>
-
-<header><a href="https://belvonefelpato.github.io"><img id="belvoneHeader" style="display: none;" src="https://avatars.githubusercontent.com/u/100421757?v=4.jpg"></a></header>
-<link rel="stylesheet" href="../headerStyle.css">
-<link rel="stylesheet" href="../loaderStyle.css">
-
-<link rel="stylesheet" href="style.css" />
-
-
-<script src="script.js"></script>
-
-<title>Civilization Shilling</title>
-
-<div class="shilling-page">
-  <div class="page-title">Civilization Shilling</div>
-  <hr class="new-line">
-  <div id="checkbox-container">
-    <div class="dropdown">
-  <button class="dropbtn">Filters</button>
-  <div class="dropdown-content">
-  <a class="content-btn" id="filter0" onclick="applyFilter('Ascending', this.id)">✓ Ascending</a>
-  <a class="content-btn" id="filter1" onclick="applyFilter('Descending', this.id)">Descending</a>
+  <div id="loader-cover">
+    <div id="loader"></div>
   </div>
-</div>
-    <div id="checkbox-text-wrapper">
-    <span id="switch-text"></span>
-    <label id="switch-label" class="switch">
-      <input onclick="checkUnCheck()" id="switch-input" type="checkbox">
-     <span class="slider round"></span>
-    </label>
+
+  <header><a href="https://belvonefelpato.github.io"><img id="belvoneHeader" style="display: none;"
+        src="https://avatars.githubusercontent.com/u/100421757?v=4.jpg"></a></header>
+  <link rel="stylesheet" href="../headerStyle.css">
+  <link rel="stylesheet" href="../loaderStyle.css">
+
+  <link rel="stylesheet" href="style.css" />
+
+
+  <script src="script.js"></script>
+
+  <title>Civilization Shilling</title>
+
+  <div class="shilling-page">
+    <div class="page-title">Civilization Shilling</div>
+    <hr class="new-line">
+    <div id="checkbox-container">
+      <div class="dropdown">
+        <button class="dropbtn">Filters</button>
+        <div class="dropdown-content">
+          <a class="content-btn" id="filter0" onclick="applyFilter('Ascending', this.id)">✓ Ascending</a>
+          <a class="content-btn" id="filter1" onclick="applyFilter('Descending', this.id)">Descending</a>
+        </div>
+      </div>
+      <div id="checkbox-text-wrapper">
+        <span id="switch-text"></span>
+        <label id="switch-label" class="switch">
+          <input onclick="checkUnCheck()" id="switch-input" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+    <div id="writings">
     </div>
   </div>
-  <div id="writings">
-</div>
-</div>
-</div>
+  </div>
 </body>
+
 </html>
