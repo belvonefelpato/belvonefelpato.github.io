@@ -187,6 +187,18 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+#belvoneHeader{
+  margin: 10px;
+  width: 100px;
+  height: auto;
+  clip-path: circle(40%);
+  transition: 0.5s ease;
+}
+#belvoneHeader:hover{
+  clip-path: circle(50%);
+  transition: 0.5s ease;
+}
+
 .dropbtn {
   background-color: #12ab9e;
   color: white;
@@ -210,6 +222,7 @@ input:checked + .slider:before {
   background-color: #0e8f84;
   color: white;
   min-width: 140px;
+  border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   z-index: 1;
@@ -229,7 +242,6 @@ input:checked + .slider:before {
 
 .dropdown-content a:hover {
   background-color: #16dbca;
-  border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 

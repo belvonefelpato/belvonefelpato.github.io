@@ -154,14 +154,15 @@ function showPage() {
 }
 
 function applyFilter(s, f){
+  
+  var writings = document.getElementById('writings');
   var kindOfFilter = parseInt(f[f.length-1]);
   if(kindOfFilter == appliedFilter) return;
-  var writings = document.getElementById('writings');
 
-  
+
   switch(s){
     case "Ascending":
-      writings.style.display = "block";
+      writings.style.display = "unset";
       writings.style.flexDirection = "initial";
       break;
     case "Descending":
