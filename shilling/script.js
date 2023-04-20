@@ -3,9 +3,10 @@ var tweetsWithLessThan = [];
 var characterCount = 280;
 
 var appliedFilter = "filter0"
-var filterCount = document.getElementsByClassName("content-btn").length - 1;
+var filterCount = 0;
 
 window.onload = function () {
+  filterCount = document.getElementsByClassName("content-btn").length - 1;
   document.getElementById('switch-text').innerHTML = "Less than " + characterCount.toString() + " characters"
   retrieveText();
   loaderFn();
