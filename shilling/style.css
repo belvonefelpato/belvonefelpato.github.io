@@ -187,6 +187,62 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.dropbtn {
+  background-color: #12ab9e;
+  color: white;
+  width: 120px;
+  padding: 16px;
+  font-size: 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 25%;
+  background-color: #0e8f84;
+  color: white;
+  min-width: 140px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+.content-btn{
+  color: white;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #16dbca;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #0e8f84;
+}
+
 
 
 @media only screen and (max-width: 600px){
@@ -210,62 +266,6 @@ input:checked + .slider:before {
 
   #read-more{
     cursor: default;
-  }
-
-  .dropbtn {
-    background-color: #12ab9e;
-    color: white;
-    width: 120px;
-    padding: 16px;
-    font-size: 20px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    left: 25%;
-    background-color: #0e8f84;
-    color: white;
-    min-width: 140px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    z-index: 1;
-  }
-  
-  .content-btn{
-    color: white;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #16dbca;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-  
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #0e8f84;
   }
 
 }
