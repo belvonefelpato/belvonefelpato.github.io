@@ -202,7 +202,7 @@ input:checked + .slider:before {
 .dropbtn {
   background-color: #12ab9e;
   color: white;
-  width: 120px;
+  width: 180px;
   padding: 16px;
   font-size: 20px;
   border-radius: 25px;
@@ -229,7 +229,7 @@ input:checked + .slider:before {
 }
 
 .content-btn{
-  color: white;
+  color: white !important;
 }
 
 .dropdown-content a {

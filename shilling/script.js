@@ -159,6 +159,9 @@ function applyFilter(s, f) {
   if (kindOfFilter == appliedFilter) return;
   var writings = document.getElementById('writings');
 
+  var dropbtn = document.getElementsByClassName('dropbtn')[0]
+  var customSymbol = "◇";
+
 
   switch (s) {
     case "Ascending":
@@ -179,6 +182,9 @@ function applyFilter(s, f) {
       document.getElementById("filter" + i.toString()).innerText = filterString
     }
   }
+
+
+  dropbtn.innerText = customSymbol + " " + s
 
   document.getElementById("filter" + kindOfFilter.toString()).innerText = "✓ " + s;
   filterApplied = "filter" + kindOfFilter.toString();
