@@ -2,6 +2,9 @@ var defaultTagsToAdd = "\n\n@CivFund $CIV #0ne #Civilization\ncivfund.org"
 var tweetsWithLessThan = [];
 var characterCount = 280;
 
+var appliedFilter = "filter0"
+var filterCount = document.getElementsByClassName("content-btn").length-1;
+
 window.onload = function() {
     document.getElementById('switch-text').innerHTML = "Less than " + characterCount.toString() + " characters" 
     retrieveText();
@@ -148,6 +151,38 @@ function showPage() {
     document.getElementById('belvoneHeader').style.display = "unset";
     document.getElementById("loader").style.display = "none";
     document.getElementById("loader-cover").style.display = "none";
+}
+
+function applyFilter(s, f){
+  var kindOfFilter = parseInt(f[f.length-1]);
+  if(kindOfFilter == appliedFilter) return;
+  var writings = document.getElementById('writings');
+
+  
+  switch(s){
+    case "Ascending":
+      writings.style.display = "block";
+      writings.style.flexDirection = "initial";
+      break;
+    case "Descending":
+      writings.style.display = "flex";
+      writings.style.flexDirection = "column-reverse";
+      break;
+  }
+  
+  for(let i=0; i<=filterCount; i++){
+    if(kindOfFilter != i){
+         let filterString = document.getElementById("filter" + i.toString()).innerText
+         filterString = filterString.replace('✓', '')
+         filterString = filterString.replace(/\s+/g, '')
+         document.getElementById("filter" + i.toString()).innerText = filterString
+     }
+  }
+  
+  document.getElementById("filter" + kindOfFilter.toString()).innerText = "✓ "+ s;
+  filterApplied = "filter" + kindOfFilter.toString();
+  
+  
 }
   
 
