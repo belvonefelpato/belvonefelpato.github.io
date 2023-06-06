@@ -96,6 +96,13 @@ button:hover{
   transition: 0.5s;
 }
 
+#element_invested_text{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: -30px;
+}
+
 #titleCheckBoxCointainer{
   position: relative;
   display: flex;
