@@ -132,10 +132,10 @@ function f1(number){
         
       
         if((result - parseFloat(withdrawAmount) > 0)){
-          pres2Text.innerHTML += "Day "+(x+1)+": " + result.toFixed(2).toLocaleString('en-GB') + " USDT" + " - with " + random + "% gain"+"<br>"
+          pres2Text.innerHTML += "Day "+(x+1)+": " + result.toFixed(2).toLocaleString('en-US') + " USDT" + " - with " + random + "% gain"+"<br>"
         }
         else{
-            pres2Text.innerHTML += "Last Day after withdrawal: " + nocompoundResult.toFixed(2).toLocaleString('en-GB') + " USDT" + " - with " + random + "% gain"+"<br>"
+            pres2Text.innerHTML += "Last Day after withdrawal: " + nocompoundResult.toFixed(2).toLocaleString('en-US') + " USDT" + " - with " + random + "% gain"+"<br>"
             pres2Text.innerHTML += "MAKE SURE TO HAVE MONEY AVAILABLE TO WITHDRAW" + "<br>"
           }
         
@@ -186,9 +186,9 @@ function f1(number){
       
       
         textResults.innerHTML += "======= RESULTS ========" + "<br><br>"
-        textResults.innerHTML += "Amount Invested: " + parseFloat(initial).toFixed(2).toLocaleString('en-GB') +" USDT" + "<br>"
-        if(revenueOnly > 0) textResults.innerHTML += "Money gained after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en-GB') +" USDT" + "<br>"
-        else textResults.innerHTML += "Money lost after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en-GB') +" USDT" + "<br>"
+        textResults.innerHTML += "Amount Invested: " + parseFloat(initial).toFixed(2).toLocaleString('en-US') +" USDT" + "<br>"
+        if(revenueOnly > 0) textResults.innerHTML += "Money gained after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en-US') +" USDT" + "<br>"
+        else textResults.innerHTML += "Money lost after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en-US') +" USDT" + "<br>"
         
         
         gainLossPercentage = revenueOnly * 100 /parseFloat(initial)
@@ -197,17 +197,17 @@ function f1(number){
       
         if(withdrawCounter != 1) textResults.innerHTML += "Compound % average: " + (percentages / days).toFixed(3) + "%" + "<br>" 
       
-        textResults.innerHTML += "Total amount after " + days + " days: " + finalGain.toFixed(2).toLocaleString('en-GB') + " USDT" + "<br>" 
+        textResults.innerHTML += "Total amount after " + days + " days: " + finalGain.toFixed(2).toLocaleString('en-US') + " USDT" + "<br>" 
         
-        if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Amount Withdrew: " + totalWithdrew.toFixed(2).toLocaleString('en-GB') + " USDT"
+        if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Amount Withdrew: " + totalWithdrew.toFixed(2).toLocaleString('en-US') + " USDT"
         if(totalWithdrew > 0 && withdrawTax > 0){
-          textResults.innerHTML += "<br>" + "Amount Withdrew after commission: " + totalAmountWithdrewAfterTax.toFixed(2).toLocaleString('en-GB') + " USDT"
-          textResults.innerHTML += "<br>" + "Single withdraw after commission: " + singleWithdrawAfterTax.toFixed(2).toLocaleString('en-GB') + " USDT" + "<br><br>"
+          textResults.innerHTML += "<br>" + "Amount Withdrew after commission: " + totalAmountWithdrewAfterTax.toFixed(2).toLocaleString('en-US') + " USDT"
+          textResults.innerHTML += "<br>" + "Single withdraw after commission: " + singleWithdrawAfterTax.toFixed(2).toLocaleString('en-US') + " USDT" + "<br><br>"
         }
       
         if(withdrawTax > 0){
-          textResults.innerHTML += "Total of " + withdrawTax + "% commission paid: " + parseFloat(totalTaxPaid).toFixed(2).toLocaleString('en-GB') +" USDT" + "<br>"
-          textResults.innerHTML += "Commission paid each " + withdrawDays + " days: " + parseFloat(singleTaxPaid).toFixed(2).toLocaleString('en-GB') + " USDT"
+          textResults.innerHTML += "Total of " + withdrawTax + "% commission paid: " + parseFloat(totalTaxPaid).toFixed(2).toLocaleString('en-US') +" USDT" + "<br>"
+          textResults.innerHTML += "Commission paid each " + withdrawDays + " days: " + parseFloat(singleTaxPaid).toFixed(2).toLocaleString('en-US') + " USDT"
         }
       
         textResults.innerHTML += "<br>"
