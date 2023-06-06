@@ -8,7 +8,7 @@ var site_url = "https://belvonefelpato.github.io/testing-daily-compounder/" //CH
 window.addEventListener('load', 
   function() { 
     //min = document.getElementById("min").value
-    comp_percentage = document.getElementById("comp_percentage").value * 2
+    comp_percentage = document.getElementById("comp_percentage").value
     initial = document.getElementById("in").value
     days = document.getElementById("days").value
 
@@ -22,16 +22,16 @@ window.addEventListener('load',
 
 setInterval(function(){
   //var min = document.getElementById("min").value
-  var comp_percentage = document.getElementById("comp_percentage").value * 2
+  var comp_percentage = document.getElementById("comp_percentage").value
   disclaimer = document.getElementById("disclaimer")
  
-      disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(comp_percentage))/2 + "% daily"
+      disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(comp_percentage)) + "% daily"
 
 }, 100);
 
 
 function getRandomFloat(min, comp_percentage, decimals) {
-  const str = (Math.random() * (comp_percentage - min) + min)
+  const str = (Math.random() * (comp_percentage*2 - min) + min)
   return parseFloat(str).toFixed(decimals);
 }
 
@@ -55,7 +55,7 @@ function f1(number){
   buttonResult.innerHTML = "0%";
   document.getElementById('res').value = ""
   //min = document.getElementById("min").value
-  comp_percentage = document.getElementById("comp_percentage").value * 2
+  comp_percentage = document.getElementById("comp_percentage").value
   
   withdrawAmount = document.getElementById('withdrawAmount').value
   withdrawDays = document.getElementById('withdrawDays').value
@@ -104,7 +104,7 @@ function f1(number){
     } 
     
    if(result > 0 && days > 0){
-        random = getRandomFloat(min, comp_percentage, 3)
+        random = getRandomFloat(min, comp_percentage*2, 3)
         percentages += parseFloat(random);
         nocompoundResult = result;
         result += result*random / 100
@@ -293,7 +293,7 @@ function showAdvancedMode(number){
 
 function addOrUpdateUrlParam()
 {
-   var combo = site_url + "?initial=" + initial + "&days=" + days + "&percentage=" + comp_percentage/2 + "%"
+   var combo = site_url + "?initial=" + initial + "&days=" + days + "&percentage=" + comp_percentage 
 
     if(window.location.href.indexOf("?") > -1) window.history.pushState( null, '', site_url );
     window.history.pushState( null, '', combo );
