@@ -1,31 +1,48 @@
-var min
-var max
+var min = 0;
+var comp_percentage
 var initial
 var days
 
-var site_url = "https://belvonefelpato.github.io/daily-compounder/"
+var currency_used
+
+var temp_withdrawAmount
+var temp_withdrawDays
+var temp_withdrawTax
+
+var calculated_once = false;
+
+var site_url = "https://belvonefelpato.github.io/daily-compounder/" //CHANGE WITH ORIGINAL WHEN RELEASING
 
 window.addEventListener('load', 
   function() { 
-    min = document.getElementById("min").value
-    max = document.getElementById("max").value
+    //min = document.getElementById("min").value
+    comp_percentage = document.getElementById("comp_percentage").value
     initial = document.getElementById("in").value
     days = document.getElementById("days").value
+
+    currency_used = document.getElementById("currency_used").value
 
     var href = window.location.href
 
     if(href.indexOf("?") > -1) retrieveUrlParam()
     else addOrUpdateUrlParam()
 
+    checkUnCheck();
+
   }, false);
 
 
 setInterval(function(){
-  var min = document.getElementById("min").value
-  var max = document.getElementById("max").value
+  //var min = document.getElementById("min").value
+  comp_percentage = document.getElementById("comp_percentage").value
   disclaimer = document.getElementById("disclaimer")
+
+  currency_used = document.getElementById("currency_used").value
+
+  let element_toWithdraw_text = document.getElementById('element_toWithdraw_text')
+  element_toWithdraw_text.innerHTML = currency_used + " to withdraw"
  
-      disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(max))/2 + "% daily"
+      disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(comp_percentage)) + "% daily"
 
 }, 100);
 
@@ -42,6 +59,19 @@ function preF1(number){
   buttonResult.style.pointerEvents = "none"
   buttonResult.style.cursor = "default";
   buttonResult.innerHTML = "0%";
+
+  let hamButton = document.getElementById("hamburgerButton")
+  currency_used = document.getElementById("currency_used").value
+
+  hamButton.style.opacity = 0
+  hamButton.style.cursor = "default"
+  hamButton.setAttribute('disabled', '')
+
+  if(textArea.classList.contains('textAreaContainerShowed')){
+    textArea.classList.remove('textAreaContainerShowed');
+    textArea.classList.add('textAreaContainerHidden');
+  }
+
 }, 10);
   
   setTimeout(function() {
@@ -54,8 +84,8 @@ function f1(number){
   buttonResult = document.getElementById("buttonResult")
   buttonResult.innerHTML = "0%";
   document.getElementById('res').value = ""
-  min = document.getElementById("min").value
-  max = document.getElementById("max").value
+  //min = document.getElementById("min").value
+  let max = comp_percentage * 2 //(random function calculates between two values)
   
   withdrawAmount = document.getElementById('withdrawAmount').value
   withdrawDays = document.getElementById('withdrawDays').value
@@ -112,10 +142,10 @@ function f1(number){
         
       
         if((result - parseFloat(withdrawAmount) > 0)){
-          pres2Text.innerHTML += "Day "+(x+1)+": " + result.toFixed(2).toLocaleString('en') + " USDT" + " - with " + random + "% gain"+"<br>"
+          pres2Text.innerHTML += "Day "+(x+1) + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + result.toFixed(2).toLocaleString('en-US') + " " + currency_used + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "+" + random + "%"+"<br>"
         }
         else{
-            pres2Text.innerHTML += "Last Day after withdrawal: " + nocompoundResult.toFixed(2).toLocaleString('en') + " USDT" + " - with " + random + "% gain"+"<br>"
+            pres2Text.innerHTML += "Last Day after withdrawal: " + nocompoundResult.toFixed(2).toLocaleString('en-US') + " " + currency_used + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "+" + random + "%"+"<br>"
             pres2Text.innerHTML += "MAKE SURE TO HAVE MONEY AVAILABLE TO WITHDRAW" + "<br>"
           }
         
@@ -166,28 +196,28 @@ function f1(number){
       
       
         textResults.innerHTML += "======= RESULTS ========" + "<br><br>"
-        textResults.innerHTML += "Amount Invested: " + parseFloat(initial).toFixed(2).toLocaleString('en') +" USDT" + "<br>"
-        if(revenueOnly > 0) textResults.innerHTML += "Money gained after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en') +" USDT" + "<br>"
-        else textResults.innerHTML += "Money lost after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en') +" USDT" + "<br>"
+        textResults.innerHTML += "Invested" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + parseFloat(initial).toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
+        if(revenueOnly > 0) textResults.innerHTML += "Gained" + '\xa0\xa0\xa0' + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + '\xa0\xa0\xa0'
+        else textResults.innerHTML += "Lost" + '\xa0\xa0\xa0' + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + '\xa0\xa0\xa0'
         
         
         gainLossPercentage = revenueOnly * 100 /parseFloat(initial)
-        if(gainLossPercentage > 0) textResults.innerHTML += "A gain of: " + gainLossPercentage.toFixed(3) + "%" + "<br>"
-        else textResults.innerHTML += "A loss of: " + gainLossPercentage.toFixed(3) + "%" + "<br>"
+        if(gainLossPercentage > 0) textResults.innerHTML += "+" + gainLossPercentage.toFixed(3) + "%" + "<br>"
+        else textResults.innerHTML += "-" + gainLossPercentage.toFixed(3) + "%" + "<br>"
       
-        if(withdrawCounter != 1) textResults.innerHTML += "Compound % average: " + (percentages / days).toFixed(3) + "%" + "<br>" 
+        if(withdrawCounter != 1) textResults.innerHTML += "Daily average" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + (percentages / days).toFixed(3) + "%" + "<br><br>" 
       
-        textResults.innerHTML += "Total amount after " + days + " days: " + finalGain.toFixed(2).toLocaleString('en') + " USDT" + "<br>" 
+        textResults.innerHTML += "TOTAL" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + finalGain.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br>" 
         
-        if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Amount Withdrew: " + totalWithdrew.toFixed(2).toLocaleString('en') + " USDT"
+        //if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Total Withdrew: " + totalWithdrew.toFixed(2).toLocaleString('en-US') + " " + currency_used
         if(totalWithdrew > 0 && withdrawTax > 0){
-          textResults.innerHTML += "<br>" + "Amount Withdrew after commission: " + totalAmountWithdrewAfterTax.toFixed(2).toLocaleString('en') + " USDT"
-          textResults.innerHTML += "<br>" + "Single withdraw after commission: " + singleWithdrawAfterTax.toFixed(2).toLocaleString('en') + " USDT" + "<br><br>"
+          textResults.innerHTML += "<br>" + "Total Withdrew" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + totalAmountWithdrewAfterTax.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br>"
+          //textResults.innerHTML += "<br>" + "Single withdraw after commission: " + singleWithdrawAfterTax.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br><br>"
         }
       
         if(withdrawTax > 0){
-          textResults.innerHTML += "Total of " + withdrawTax + "% commission paid: " + parseFloat(totalTaxPaid).toFixed(2).toLocaleString('en') +" USDT" + "<br>"
-          textResults.innerHTML += "Commission paid each " + withdrawDays + " days: " + parseFloat(singleTaxPaid).toFixed(2).toLocaleString('en') + " USDT"
+          textResults.innerHTML += "Fees Paid" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + parseFloat(totalTaxPaid).toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
+          //textResults.innerHTML += "Commission paid each " + withdrawDays + " days: " + parseFloat(singleTaxPaid).toFixed(2).toLocaleString('en-US') + " " + currency_used
         }
       
         textResults.innerHTML += "<br>"
@@ -195,7 +225,12 @@ function f1(number){
         pres2Text.innerHTML += "<br>" + "========================" + "<br>"
       
         switchButtons(number)
-        switchClasses(number);
+        //switchClasses(number)
+        openCloseResultScreen()
+
+        if(!calculated_once) document.getElementById("hamburgerButton").style.display = "initial"
+        calculated_once = true;
+
       }
   }
   
@@ -204,52 +239,65 @@ function f1(number){
 
 function switchButtons(number){
   var button = document.getElementById("buttonResult");
+  let hamButton = document.getElementById("hamburgerButton")
   
   if(number === 1){
   button.classList.remove('resultButton');
   button.classList.add('closeButton');
   scrollToTop()
   $('#progressBar').css('width', '0')
-  button.setAttribute('onclick','switchClasses(2)');
+  //button.setAttribute('onclick','switchClasses(2)');
     
   setTimeout(function() {
-  button.innerHTML = "X";
+  button.innerHTML = ""
 }, 130)
     
   setTimeout(function() {
   button.style.pointerEvents = "auto"
-  button.style.cursor = "pointer";
-}, 600)
+  button.style.cursor = "default";
+  button.setAttribute('disabled', '')
+  hamButton.style.opacity = 1
+  hamButton.style.cursor = "pointer"
+  hamButton.removeAttribute('disabled', '')
+}, 300)
 }
 else{
   button.classList.remove('closeButton');
   button.classList.add('resultButton');
   button.setAttribute('onclick','preF1(1)');
-  
-  setTimeout(function() {
+  button.removeAttribute('disabled', '')
+  button.style.cursor = "pointer";
   button.innerHTML = "Calculate"
-}, 180);
+  
 }
 }
 
-function switchClasses(number){
-  
-var textArea = document.getElementById("textArea");
- 
-if(number === 1){
-  textArea.classList.remove('textAreaContainerHidden');
-  textArea.classList.add('textAreaContainerShowed');
-}
-else{
-  textArea.classList.remove('textAreaContainerShowed');
-  textArea.classList.add('textAreaContainerHidden');
+/*function switchClasses(number){
+if(number != 1){
   switchButtons(2)
 }
-}
+}*/
 
 function scrollToTop(){
   var textArea = document.getElementById("textArea");
   textArea.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openCloseResultScreen(){
+  
+  let textArea = document.getElementById("textArea");
+
+  if(textArea.classList.contains('textAreaContainerHidden')){
+    textArea.classList.remove('textAreaContainerHidden');
+    textArea.classList.add('textAreaContainerShowed');
+    switchButtons(1)
+  }
+  else{
+    textArea.classList.remove('textAreaContainerShowed');
+    textArea.classList.add('textAreaContainerHidden');
+    switchButtons(2)
+
+  }
 }
 
 
@@ -293,20 +341,61 @@ function showAdvancedMode(number){
 
 function addOrUpdateUrlParam()
 {
-   var combo = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&max=" + max
+   var combo = site_url + "?currency=" + currency_used + "&initial=" + initial + "&days=" + days + "&percentage=" + comp_percentage 
 
     if(window.location.href.indexOf("?") > -1) window.history.pushState( null, '', site_url );
     window.history.pushState( null, '', combo );
-    //window.location.href = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&max=" + max
+    //window.location.href = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&comp_percentage=" + comp_percentage
 }
 
 function retrieveUrlParam(){
   var queryString = window.location.search
   var urlParams = new URLSearchParams(queryString)
 
-  document.getElementById("min").value = urlParams.get('min')
-  document.getElementById("max").value = urlParams.get('max')
+  //document.getElementById("min").value = urlParams.get('min')
+  document.getElementById("currency_used").value = urlParams.get('currency')
+  document.getElementById("comp_percentage").value = urlParams.get('percentage')
   document.getElementById("in").value = urlParams.get('initial')
   document.getElementById("days").value = urlParams.get('days')
+}
+
+function checkUnCheck() {
+  if(!document.getElementById('switch-input').checked){
+    
+    temp_withdrawAmount = document.getElementById('withdrawAmount').value
+    temp_withdrawDays = document.getElementById('withdrawDays').value
+    temp_withdrawTax = document.getElementById('withdrawTax').value
+
+    document.getElementById('withdrawAmount').value = 0
+    document.getElementById('withdrawDays').value = 0
+    document.getElementById('withdrawTax').value = 0
+
+    withdrawAmount = 0;
+    withdrawDays = 0;
+    withdrawTax = 0;
+
+    document.getElementById('withdrawAmount').setAttribute('disabled', '')
+    document.getElementById('withdrawDays').setAttribute('disabled', '')
+    document.getElementById('withdrawTax').setAttribute('disabled', '')
+
+    document.getElementById('adv_elements').style.opacity = 0.2
+  }
+  else{
+
+    document.getElementById('withdrawAmount').removeAttribute('disabled', '')
+    document.getElementById('withdrawDays').removeAttribute('disabled', '')
+    document.getElementById('withdrawTax').removeAttribute('disabled', '')
+
+    document.getElementById('withdrawAmount').value = temp_withdrawAmount
+    document.getElementById('withdrawDays').value = temp_withdrawDays
+    document.getElementById('withdrawTax').value = temp_withdrawTax
+
+    withdrawAmount = temp_withdrawAmount
+    withdrawDays = temp_withdrawDays
+    withdrawTax = temp_withdrawTax
+
+    document.getElementById('adv_elements').style.opacity = 1
+
+  }
 }
 

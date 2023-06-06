@@ -11,7 +11,7 @@ var temp_withdrawTax
 
 var calculated_once = false;
 
-var site_url = "https://belvonefelpato.github.io/testing-daily-compounder/" //CHANGE WITH ORIGINAL WHEN RELEASING
+var site_url = "https://belvonefelpato.github.io/daily-compounder/" //CHANGE WITH ORIGINAL WHEN RELEASING
 
 window.addEventListener('load', 
   function() { 
