@@ -215,7 +215,8 @@ function f1(number){
         pres2Text.innerHTML += "<br>" + "========================" + "<br>"
       
         switchButtons(number)
-        switchClasses(number);
+        //switchClasses(number)
+        openCloseResultScreen()
 
         if(!calculated_once) document.getElementById("hamburgerButton").style.display = "initial"
         calculated_once = true;
@@ -228,7 +229,6 @@ function f1(number){
 
 function switchButtons(number){
   var button = document.getElementById("buttonResult");
-
   let hamButton = document.getElementById("hamburgerButton")
   
   if(number === 1){
@@ -240,36 +240,32 @@ function switchButtons(number){
     
   setTimeout(function() {
   button.innerHTML = "Calculate"
-  button.setAttribute('disabled', '')
-  hamButton.style.opacity = 1
-  hamButton.style.cursor = "pointer"
-  hamButton.removeAttribute('disabled', '')
 }, 130)
     
   setTimeout(function() {
   button.style.pointerEvents = "auto"
-  button.style.cursor = "pointer";
+  button.style.cursor = "default";
+  button.setAttribute('disabled', '')
+  hamButton.style.opacity = 1
+  hamButton.style.cursor = "pointer"
+  hamButton.removeAttribute('disabled', '')
 }, 600)
 }
-else{ //not used anymore
+else{
   button.classList.remove('closeButton');
   button.classList.add('resultButton');
   button.setAttribute('onclick','preF1(1)');
   button.removeAttribute('disabled', '')
+  button.style.cursor = "pointer";
   
 }
 }
 
-function switchClasses(number){
-  
-var textArea = document.getElementById("textArea");
-
-openCloseResultScreen()
- 
+/*function switchClasses(number){
 if(number != 1){
   switchButtons(2)
 }
-}
+}*/
 
 function scrollToTop(){
   var textArea = document.getElementById("textArea");
@@ -279,23 +275,17 @@ function scrollToTop(){
 function openCloseResultScreen(){
   
   let textArea = document.getElementById("textArea");
-  let buttonResult = document.getElementById("buttonResult");
 
   if(textArea.classList.contains('textAreaContainerHidden')){
     textArea.classList.remove('textAreaContainerHidden');
     textArea.classList.add('textAreaContainerShowed');
-    buttonResult.setAttribute('disabled', '')
-    buttonResult.classList.remove('resultButton');
-    buttonResult.classList.add('closeButton');
-    scrollToTop()
+    switchButtons(1)
   }
   else{
     textArea.classList.remove('textAreaContainerShowed');
     textArea.classList.add('textAreaContainerHidden');
-    buttonResult.classList.remove('closeButton');
-    buttonResult.classList.add('resultButton');
-    buttonResult.setAttribute('onclick','preF1(1)');
-    buttonResult.removeAttribute('disabled', '')
+    switchButtons(2)
+
   }
 }
 
