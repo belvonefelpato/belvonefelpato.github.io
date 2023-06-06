@@ -3,6 +3,11 @@ var comp_percentage
 var initial
 var days
 
+var adv_mode = false
+var temp_withdrawAmount = 0
+var temp_withdrawDays = 0
+var temp_withdrawTax = 0
+
 var site_url = "https://belvonefelpato.github.io/testing-daily-compounder/" //CHANGE WITH ORIGINAL WHEN RELEASING
 
 window.addEventListener('load', 
@@ -308,5 +313,43 @@ function retrieveUrlParam(){
   document.getElementById("comp_percentage").value = urlParams.get('comp_percentage')
   document.getElementById("in").value = urlParams.get('initial')
   document.getElementById("days").value = urlParams.get('days')
+}
+
+function checkUnCheck() {
+  if(adv_mode){
+    adv_mode = false
+
+    temp_withdrawAmount = document.getElementById('withdrawAmount').value
+    temp_withdrawDays = document.getElementById('withdrawDays').value
+    temp_withdrawTax = document.getElementById('withdrawTax').value
+
+    document.getElementById('withdrawAmount').value = 0
+    document.getElementById('withdrawDays').value = 0
+    document.getElementById('withdrawTax').value = 0
+
+    withdrawAmount = 0;
+    withdrawDays = 0;
+    withdrawTax = 0;
+
+    document.getElementById('withdrawAmount').setAttribute('disabled', '')
+    document.getElementById('withdrawDays').setAttribute('disabled', '')
+    document.getElementById('withdrawTax').setAttribute('disabled', '')
+  }
+  else{
+    adv_mode = true
+
+    document.getElementById('withdrawAmount').removeAttribute('disabled', '')
+    document.getElementById('withdrawDays').removeAttribute('disabled', '')
+    document.getElementById('withdrawTax').removeAttribute('disabled', '')
+
+    document.getElementById('withdrawAmount').value = temp_withdrawAmount
+    document.getElementById('withdrawDays').value = temp_withdrawDays
+    document.getElementById('withdrawTax').value = temp_withdrawTax
+
+    withdrawAmount = temp_withdrawAmount
+    withdrawDays = temp_withdrawDays
+    withdrawTax = temp_withdrawTax
+
+  }
 }
 
