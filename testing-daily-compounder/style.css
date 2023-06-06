@@ -303,7 +303,7 @@ button:hover{
 }
 
 #hamburgerButton{
-  cursor: pointer;
+  cursor: default;
   opacity: 0;
   transform: translateX(-85%);
   width: 40px !important;
