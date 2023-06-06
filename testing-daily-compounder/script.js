@@ -293,7 +293,7 @@ function showAdvancedMode(number){
 
 function addOrUpdateUrlParam()
 {
-   var combo = site_url + "?initial=" + initial + "&days=" + days + "&percentage=" + comp_percentage
+   var combo = site_url + "?initial=" + initial + "&days=" + days + "&percentage=" + comp_percentage/2 + "%"
 
     if(window.location.href.indexOf("?") > -1) window.history.pushState( null, '', site_url );
     window.history.pushState( null, '', combo );
