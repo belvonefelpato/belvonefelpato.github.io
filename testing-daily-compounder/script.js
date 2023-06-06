@@ -222,6 +222,8 @@ function f1(number){
 
 function switchButtons(number){
   var button = document.getElementById("buttonResult");
+
+  let hamButton = document.getElementById("hamburgerButton")
   
   if(number === 1){
   button.classList.remove('resultButton');
@@ -232,8 +234,9 @@ function switchButtons(number){
     
   setTimeout(function() {
   button.innerHTML = "X";
-  document.getElementById("hamburgerButton").style.opacity = 0
-  document.getElementById('hamburgerButton').setAttribute('disabled', '')
+  hamButton.style.opacity = 0
+  hamButton.style.cursor = "default"
+  hamButton.setAttribute('disabled', '')
 }, 130)
     
   setTimeout(function() {
@@ -248,8 +251,11 @@ else{
   
   setTimeout(function() {
   button.innerHTML = "Calculate"
-  document.getElementById("hamburgerButton").style.opacity = 1
-  document.getElementById('hamburgerButton').removeAttribute('disabled', '')
+ 
+  hamButton.style.opacity = 1
+  hamButton.style.cursor = "pointer"
+  hamButton.removeAttribute('disabled', '')
+
 }, 180);
 }
 }

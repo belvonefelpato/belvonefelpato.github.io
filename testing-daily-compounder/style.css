@@ -36,6 +36,11 @@ button{
   transition-delay: width 0.3s;
 }
 
+button:hover{
+  box-shadow: inset 2px 1000px 5px rgba(0,0,0,0.7) !important;
+  transition: 0.5s !important;
+}
+
 #disclaimer, #disclaimerSettings{
   margin: 5px auto;
   padding-right: 10px;
@@ -260,7 +265,7 @@ button{
   clip-path: inset(0% 0% 0% 0% round 0%);
   width: 100%;
   height: 66%;
-  top: 60px;
+  top: 66px;
   overflow-x: hidden;
   overflow-y: auto;
   transition-property: width, height, border;
@@ -298,6 +303,7 @@ button{
 }
 
 #hamburgerButton{
+  cursor: pointer;
   opacity: 0;
   transform: translateX(-85%);
   width: 40px !important;
