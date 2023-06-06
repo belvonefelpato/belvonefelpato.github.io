@@ -377,6 +377,8 @@ function checkUnCheck() {
     document.getElementById('withdrawAmount').setAttribute('disabled', '')
     document.getElementById('withdrawDays').setAttribute('disabled', '')
     document.getElementById('withdrawTax').setAttribute('disabled', '')
+
+    document.getElementById('adv_elements').style.opacity = 0.2
   }
   else{
 
@@ -391,6 +393,8 @@ function checkUnCheck() {
     withdrawAmount = temp_withdrawAmount
     withdrawDays = temp_withdrawDays
     withdrawTax = temp_withdrawTax
+
+    document.getElementById('adv_elements').style.opacity = 1
 
   }
 }
