@@ -3,7 +3,7 @@ var max
 var initial
 var days
 
-var site_url = "https://belvonefelpato.github.io/daily-compounder/"
+var site_url = "https://belvonefelpato.github.io/testing-daily-compounder/" //CHANGE WITH ORIGINAL WHEN RELEASING
 
 window.addEventListener('load', 
   function() { 
@@ -54,7 +54,7 @@ function f1(number){
   buttonResult = document.getElementById("buttonResult")
   buttonResult.innerHTML = "0%";
   document.getElementById('res').value = ""
-  min = document.getElementById("min").value
+  //min = document.getElementById("min").value
   max = document.getElementById("max").value
   
   withdrawAmount = document.getElementById('withdrawAmount').value
