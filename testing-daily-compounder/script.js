@@ -254,12 +254,8 @@ else{
   button.classList.remove('closeButton');
   button.classList.add('resultButton');
   button.setAttribute('onclick','preF1(1)');
-  
-  setTimeout(function() {
   button.removeAttribute('disabled', '')
   
-
-}, 180);
 }
 }
 
@@ -286,10 +282,18 @@ function openCloseResultScreen(){
   if(textArea.classList.contains('textAreaContainerHidden')){
     textArea.classList.remove('textAreaContainerHidden');
     textArea.classList.add('textAreaContainerShowed');
+    button.setAttribute('disabled', '')
+    button.classList.remove('resultButton');
+    button.classList.add('closeButton');
+    scrollToTop()
   }
   else{
     textArea.classList.remove('textAreaContainerShowed');
     textArea.classList.add('textAreaContainerHidden');
+    button.classList.remove('closeButton');
+    button.classList.add('resultButton');
+    button.setAttribute('onclick','preF1(1)');
+    button.removeAttribute('disabled', '')
   }
 }
 
