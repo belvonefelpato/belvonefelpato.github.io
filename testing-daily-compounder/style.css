@@ -62,7 +62,7 @@ p{
 #titleCheckBoxCointainer{
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .advancedSettingsHidden{
@@ -357,9 +357,7 @@ p{
 #checkbox-text-wrapper{
   position: relative;
   display: flex;
-  width: 320px;
-  top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(25%);
 }
 
 #switch-text{
@@ -373,7 +371,7 @@ p{
   position: absolute;
   right: 0%;
   top: 50%; 
-  transform: translateY(-50%);
+  transform: translate(-50%,-50%);
 }
 
 .switch input { 
