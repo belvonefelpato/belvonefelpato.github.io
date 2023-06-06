@@ -39,7 +39,7 @@ setInterval(function(){
 
 
 function getRandomFloat(min, comp_percentage, decimals) {
-  const str = (Math.random() * (comp_percentage*2 - min) + min)
+  const str = (Math.random() * (comp_percentage - min) + min)
   return parseFloat(str).toFixed(decimals);
 }
 
@@ -118,7 +118,7 @@ function f1(number){
     } 
     
    if(result > 0 && days > 0){
-        random = getRandomFloat(min, comp_percentage*2, 3)
+        random = getRandomFloat(min, comp_percentage, 3)
         percentages += parseFloat(random);
         nocompoundResult = result;
         result += result*random / 100
