@@ -317,7 +317,7 @@ function retrieveUrlParam(){
 }
 
 function checkUnCheck() {
-  if(document.getElementById('switch-input').checked){
+  if(!document.getElementById('switch-input').checked){
     
     temp_withdrawAmount = document.getElementById('withdrawAmount').value
     temp_withdrawDays = document.getElementById('withdrawDays').value
