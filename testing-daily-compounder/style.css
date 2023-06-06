@@ -298,8 +298,10 @@ button{
 }
 
 #hamburgerButton{
-  display: none;
-  transform: translateX(25%);
+  opacity: 0;
+  transform: translateX(-85%);
+  width: 40px !important;
+  height: 40px !important;
 }
 
 

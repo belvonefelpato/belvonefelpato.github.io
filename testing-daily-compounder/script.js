@@ -226,7 +226,8 @@ function switchButtons(number){
     
   setTimeout(function() {
   button.innerHTML = "X";
-  document.getElementById("hamburgerButton").style.display = "none"
+  document.getElementById("hamburgerButton").style.opacity = 0
+  document.getElementById('hamburgerButton').setAttribute('disabled', '')
 }, 130)
     
   setTimeout(function() {
@@ -241,7 +242,8 @@ else{
   
   setTimeout(function() {
   button.innerHTML = "Calculate"
-  document.getElementById("hamburgerButton").style.display = "initial"
+  document.getElementById("hamburgerButton").style.opacity = 1
+  document.getElementById('hamburgerButton').removeAttribute('disabled', '')
 }, 180);
 }
 }
