@@ -12,9 +12,17 @@ p{
   color: white;
 }
 
+input {
+  width: 100%;
+  border-style: none;
+  padding: 0;
+}
+
 button{
   z-index:100;
   position: relative;
+  vertical-align: top;
+  padding: 0;
   clip-path: inset(0% 0% 0% 0% round 0%);
   border-radius: 31px;
   width: 50px;
