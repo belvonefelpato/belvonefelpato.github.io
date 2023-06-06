@@ -3,7 +3,6 @@ var comp_percentage
 var initial
 var days
 
-var adv_mode = false
 var temp_withdrawAmount = 0
 var temp_withdrawDays = 0
 var temp_withdrawTax = 0
@@ -316,9 +315,8 @@ function retrieveUrlParam(){
 }
 
 function checkUnCheck() {
-  if(adv_mode){
-    adv_mode = false
-
+  if(document.getElementById('switch-input').checked){
+    
     temp_withdrawAmount = document.getElementById('withdrawAmount').value
     temp_withdrawDays = document.getElementById('withdrawDays').value
     temp_withdrawTax = document.getElementById('withdrawTax').value
@@ -336,7 +334,6 @@ function checkUnCheck() {
     document.getElementById('withdrawTax').setAttribute('disabled', '')
   }
   else{
-    adv_mode = true
 
     document.getElementById('withdrawAmount').removeAttribute('disabled', '')
     document.getElementById('withdrawDays').removeAttribute('disabled', '')

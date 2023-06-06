@@ -59,8 +59,10 @@ p{
   transition: 0.5s;
 }
 
-#advancedMode{
+#titleCheckBoxCointainer{
+  position: relative;
   display: flex;
+  justify-content: space-around;
 }
 
 .advancedSettingsHidden{
@@ -172,7 +174,7 @@ p{
   border-radius: 31px;
   left: 50%;
   bottom: 52.5px;
-  transform: translate(-50%, 0);*/
+  transform: translate(-50%, 0);
   margin-left: 0;
   margin-right:0;
   padding:0;
@@ -342,14 +344,6 @@ p{
   display: inline-block;
   width: 60px;
   height: 34px;
-}
-
-#checkbox-container{
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 55px;
-  justify-content: space-around;
 }
 
 #checkbox-text-wrapper{
