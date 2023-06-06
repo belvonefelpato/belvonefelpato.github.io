@@ -3,9 +3,9 @@ var comp_percentage
 var initial
 var days
 
-var temp_withdrawAmount = 0
-var temp_withdrawDays = 0
-var temp_withdrawTax = 0
+var temp_withdrawAmount = 1000
+var temp_withdrawDays = 30
+var temp_withdrawTax = 10
 
 var calculated_once = false;
 
