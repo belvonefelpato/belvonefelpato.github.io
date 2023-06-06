@@ -21,6 +21,8 @@ window.addEventListener('load',
     if(href.indexOf("?") > -1) retrieveUrlParam()
     else addOrUpdateUrlParam()
 
+    checkUnCheck();
+
   }, false);
 
 
