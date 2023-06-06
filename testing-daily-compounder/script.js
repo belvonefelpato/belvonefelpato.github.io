@@ -1,5 +1,5 @@
 var min = 0;
-var max
+var comp_percentage
 var initial
 var days
 
@@ -8,7 +8,7 @@ var site_url = "https://belvonefelpato.github.io/testing-daily-compounder/" //CH
 window.addEventListener('load', 
   function() { 
     //min = document.getElementById("min").value
-    max = document.getElementById("max").value * 2
+    comp_percentage = document.getElementById("comp_percentage").value * 2
     initial = document.getElementById("in").value
     days = document.getElementById("days").value
 
@@ -22,16 +22,16 @@ window.addEventListener('load',
 
 setInterval(function(){
   //var min = document.getElementById("min").value
-  var max = document.getElementById("max").value * 2
+  var comp_percentage = document.getElementById("comp_percentage").value * 2
   disclaimer = document.getElementById("disclaimer")
  
-      disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(max))/2 + "% daily"
+      disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(comp_percentage))/2 + "% daily"
 
 }, 100);
 
 
-function getRandomFloat(min, max, decimals) {
-  const str = (Math.random() * (max - min) + min)
+function getRandomFloat(min, comp_percentage, decimals) {
+  const str = (Math.random() * (comp_percentage - min) + min)
   return parseFloat(str).toFixed(decimals);
 }
 
@@ -55,7 +55,7 @@ function f1(number){
   buttonResult.innerHTML = "0%";
   document.getElementById('res').value = ""
   //min = document.getElementById("min").value
-  max = document.getElementById("max").value
+  comp_percentage = document.getElementById("comp_percentage").value * 2
   
   withdrawAmount = document.getElementById('withdrawAmount').value
   withdrawDays = document.getElementById('withdrawDays').value
@@ -104,7 +104,7 @@ function f1(number){
     } 
     
    if(result > 0 && days > 0){
-        random = getRandomFloat(min, max, 3)
+        random = getRandomFloat(min, comp_percentage, 3)
         percentages += parseFloat(random);
         nocompoundResult = result;
         result += result*random / 100
@@ -293,11 +293,11 @@ function showAdvancedMode(number){
 
 function addOrUpdateUrlParam()
 {
-   var combo = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&max=" + max
+   var combo = site_url + "?initial=" + initial + "&days=" + days + "&percentage=" + comp_percentage
 
     if(window.location.href.indexOf("?") > -1) window.history.pushState( null, '', site_url );
     window.history.pushState( null, '', combo );
-    //window.location.href = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&max=" + max
+    //window.location.href = site_url + "?initial=" + initial + "&days=" + days + "&min=" + min + "&comp_percentage=" + comp_percentage
 }
 
 function retrieveUrlParam(){
@@ -305,7 +305,7 @@ function retrieveUrlParam(){
   var urlParams = new URLSearchParams(queryString)
 
   document.getElementById("min").value = urlParams.get('min')
-  document.getElementById("max").value = urlParams.get('max')
+  document.getElementById("comp_percentage").value = urlParams.get('comp_percentage')
   document.getElementById("in").value = urlParams.get('initial')
   document.getElementById("days").value = urlParams.get('days')
 }
