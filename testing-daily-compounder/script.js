@@ -211,7 +211,7 @@ function f1(number){
         
         //if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Total Withdrew: " + totalWithdrew.toFixed(2).toLocaleString('en-US') + " " + currency_used
         if(totalWithdrew > 0 && withdrawTax > 0){
-          textResults.innerHTML += "<br>" + "Total Withdrew" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + totalAmountWithdrewAfterTax.toFixed(2).toLocaleString('en-US') + " " + currency_used
+          textResults.innerHTML += "<br>" + "Total Withdrew" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + totalAmountWithdrewAfterTax.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br>"
           //textResults.innerHTML += "<br>" + "Single withdraw after commission: " + singleWithdrawAfterTax.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br><br>"
         }
       
