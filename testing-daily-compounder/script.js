@@ -37,7 +37,10 @@ setInterval(function(){
   comp_percentage = document.getElementById("comp_percentage").value
   disclaimer = document.getElementById("disclaimer")
 
-  document.getElementById('element_toWithdraw_text').innerHTML = currency_used.toString() + " to withdraw" 
+  currency_used = document.getElementById("currency_used").value
+
+  let element_toWithdraw_text = document.getElementById('element_toWithdraw_text')
+  element_toWithdraw_text.innerHTML = currency_used + " to withdraw"
  
       disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(comp_percentage)) + "% daily"
 
