@@ -51,6 +51,12 @@ function preF1(number){
   buttonResult.style.cursor = "default";
   buttonResult.innerHTML = "0%";
 
+  let hamButton = document.getElementById("hamburgerButton")
+
+  hamButton.style.opacity = 0
+  hamButton.style.cursor = "default"
+  hamButton.setAttribute('disabled', '')
+
   if(textArea.classList.contains('textAreaContainerShowed')){
     textArea.classList.remove('textAreaContainerShowed');
     textArea.classList.add('textAreaContainerHidden');
@@ -234,9 +240,6 @@ function switchButtons(number){
     
   setTimeout(function() {
   button.innerHTML = "X";
-  hamButton.style.opacity = 0
-  hamButton.style.cursor = "default"
-  hamButton.setAttribute('disabled', '')
 }, 130)
     
   setTimeout(function() {
