@@ -50,6 +50,12 @@ function preF1(number){
   buttonResult.style.pointerEvents = "none"
   buttonResult.style.cursor = "default";
   buttonResult.innerHTML = "0%";
+
+  if(textArea.classList.contains('textAreaContainerShowed')){
+    textArea.classList.remove('textAreaContainerShowed');
+    textArea.classList.add('textAreaContainerHidden');
+  }
+
 }, 10);
   
   setTimeout(function() {
