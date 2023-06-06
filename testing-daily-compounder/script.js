@@ -304,7 +304,7 @@ function retrieveUrlParam(){
   var queryString = window.location.search
   var urlParams = new URLSearchParams(queryString)
 
-  document.getElementById("min").value = urlParams.get('min')
+  //document.getElementById("min").value = urlParams.get('min')
   document.getElementById("comp_percentage").value = urlParams.get('comp_percentage')
   document.getElementById("in").value = urlParams.get('initial')
   document.getElementById("days").value = urlParams.get('days')
