@@ -236,7 +236,7 @@ function switchButtons(number){
   button.classList.add('closeButton');
   scrollToTop()
   $('#progressBar').css('width', '0')
-  button.setAttribute('onclick','switchClasses(2)');
+  //button.setAttribute('onclick','switchClasses(2)');
     
   setTimeout(function() {
   button.setAttribute('disabled', '')
@@ -277,23 +277,24 @@ function scrollToTop(){
 
 function openCloseResultScreen(){
   
-  var textArea = document.getElementById("textArea");
+  let textArea = document.getElementById("textArea");
+  let buttonResult = document.getElementById("buttonResult");
 
   if(textArea.classList.contains('textAreaContainerHidden')){
     textArea.classList.remove('textAreaContainerHidden');
     textArea.classList.add('textAreaContainerShowed');
-    button.setAttribute('disabled', '')
-    button.classList.remove('resultButton');
-    button.classList.add('closeButton');
+    buttonResult.setAttribute('disabled', '')
+    buttonResult.classList.remove('resultButton');
+    buttonResult.classList.add('closeButton');
     scrollToTop()
   }
   else{
     textArea.classList.remove('textAreaContainerShowed');
     textArea.classList.add('textAreaContainerHidden');
-    button.classList.remove('closeButton');
-    button.classList.add('resultButton');
-    button.setAttribute('onclick','preF1(1)');
-    button.removeAttribute('disabled', '')
+    buttonResult.classList.remove('closeButton');
+    buttonResult.classList.add('resultButton');
+    buttonResult.setAttribute('onclick','preF1(1)');
+    buttonResult.removeAttribute('disabled', '')
   }
 }
 
