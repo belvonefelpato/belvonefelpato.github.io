@@ -341,7 +341,7 @@ function showAdvancedMode(number){
 
 function addOrUpdateUrlParam()
 {
-   var combo = site_url + "?initial=" + initial + "&days=" + days + "&comp_percentage=" + comp_percentage 
+   var combo = site_url + "?currency=" + currency_used + "&initial=" + initial + "&days=" + days + "&percentage=" + comp_percentage 
 
     if(window.location.href.indexOf("?") > -1) window.history.pushState( null, '', site_url );
     window.history.pushState( null, '', combo );
@@ -353,7 +353,8 @@ function retrieveUrlParam(){
   var urlParams = new URLSearchParams(queryString)
 
   //document.getElementById("min").value = urlParams.get('min')
-  document.getElementById("comp_percentage").value = urlParams.get('comp_percentage')
+  document.getElementById("currency_used").value = urlParams.get('currency')
+  document.getElementById("comp_percentage").value = urlParams.get('percentage')
   document.getElementById("in").value = urlParams.get('initial')
   document.getElementById("days").value = urlParams.get('days')
 }
