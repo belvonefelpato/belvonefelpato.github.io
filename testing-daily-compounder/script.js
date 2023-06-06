@@ -7,6 +7,8 @@ var temp_withdrawAmount = 0
 var temp_withdrawDays = 0
 var temp_withdrawTax = 0
 
+var calculated_once = false;
+
 var site_url = "https://belvonefelpato.github.io/testing-daily-compounder/" //CHANGE WITH ORIGINAL WHEN RELEASING
 
 window.addEventListener('load', 
@@ -202,6 +204,10 @@ function f1(number){
       
         switchButtons(number)
         switchClasses(number);
+
+        if(!calculated_once) document.getElementById("hamburgerButton").style.display = "initial"
+        calculated_once = true;
+
       }
   }
   
@@ -241,14 +247,10 @@ else{
 function switchClasses(number){
   
 var textArea = document.getElementById("textArea");
+
+openCloseResultScreen()
  
-if(number === 1){
-  textArea.classList.remove('textAreaContainerHidden');
-  textArea.classList.add('textAreaContainerShowed');
-}
-else{
-  textArea.classList.remove('textAreaContainerShowed');
-  textArea.classList.add('textAreaContainerHidden');
+if(number != 1){
   switchButtons(2)
 }
 }
@@ -256,6 +258,20 @@ else{
 function scrollToTop(){
   var textArea = document.getElementById("textArea");
   textArea.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openCloseResultScreen(){
+  
+  var textArea = document.getElementById("textArea");
+
+  if(textArea.classList.contains('textAreaContainerHidden')){
+    textArea.classList.remove('textAreaContainerHidden');
+    textArea.classList.add('textAreaContainerShowed');
+  }
+  else{
+    textArea.classList.remove('textAreaContainerShowed');
+    textArea.classList.add('textAreaContainerHidden');
+  }
 }
 
 
