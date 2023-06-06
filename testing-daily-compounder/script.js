@@ -239,6 +239,7 @@ function switchButtons(number){
   //button.setAttribute('onclick','switchClasses(2)');
     
   setTimeout(function() {
+  button.innerHTML = "Calculate"
   button.setAttribute('disabled', '')
   hamButton.style.opacity = 1
   hamButton.style.cursor = "pointer"
@@ -250,7 +251,7 @@ function switchButtons(number){
   button.style.cursor = "pointer";
 }, 600)
 }
-else{
+else{ //not used anymore
   button.classList.remove('closeButton');
   button.classList.add('resultButton');
   button.setAttribute('onclick','preF1(1)');
