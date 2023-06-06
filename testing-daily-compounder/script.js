@@ -196,18 +196,18 @@ function f1(number){
       
       
         textResults.innerHTML += "======= RESULTS ========" + "<br><br>"
-        textResults.innerHTML += "Amount Invested: " + parseFloat(initial).toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
-        if(revenueOnly > 0) textResults.innerHTML += "Money gained after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
-        else textResults.innerHTML += "Money lost after " + days + " days: " + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
+        textResults.innerHTML += "Invested:" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + parseFloat(initial).toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
+        if(revenueOnly > 0) textResults.innerHTML += "After " + days + " days: +" + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0'
+        else textResults.innerHTML += "After " + days + " days: -" + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0'
         
         
         gainLossPercentage = revenueOnly * 100 /parseFloat(initial)
-        if(gainLossPercentage > 0) textResults.innerHTML += "A gain of: " + gainLossPercentage.toFixed(3) + "%" + "<br>"
-        else textResults.innerHTML += "A loss of: " + gainLossPercentage.toFixed(3) + "%" + "<br>"
+        if(gainLossPercentage > 0) textResults.innerHTML += "+" + gainLossPercentage.toFixed(3) + "%" + "<br>"
+        else textResults.innerHTML += "-" + gainLossPercentage.toFixed(3) + "%" + "<br>"
       
-        if(withdrawCounter != 1) textResults.innerHTML += "Compound % average: " + (percentages / days).toFixed(3) + "%" + "<br>" 
+        if(withdrawCounter != 1) textResults.innerHTML += "Daily % average:" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + (percentages / days).toFixed(3) + "%" + "<br><br>" 
       
-        textResults.innerHTML += "Total amount after " + days + " days: " + finalGain.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br>" 
+        textResults.innerHTML += "TOTAL" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + finalGain.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br>" 
         
         if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Amount Withdrew: " + totalWithdrew.toFixed(2).toLocaleString('en-US') + " " + currency_used
         if(totalWithdrew > 0 && withdrawTax > 0){
