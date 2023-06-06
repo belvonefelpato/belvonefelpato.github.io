@@ -297,6 +297,11 @@ button{
   transition: 0.5s !important;
 }
 
+#hamburgerButton{
+  display: none;
+  transform: translateX(25%);
+}
+
 
 .openAdvancedMode{
   position: relative;

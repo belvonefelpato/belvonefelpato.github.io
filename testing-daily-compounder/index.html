@@ -50,7 +50,10 @@
 </div>
 
 <div id="compounderBlock" class="compounder">
+  <div style="position: relative; display: flex; justify-content: space-between;">
  <div class="title">Daily Compound Calculator</div>
+ <button id="hamburgerButton" onclick="openCloseResultScreen();">☰</button>
+</div>
  <div class="elements">
   <div class="option">
    <p>USDT invested</p>
@@ -67,11 +70,8 @@
   </div>
   <div id="disclaimer"></div>
    
-  <div style="position: relative; display: flex">
   <button id="buttonResult" class="resultButton" onclick="preF1(1)">Calculate</button>
-    <div id="progressBar"></div>
-  <button style="display: none;" id="hamburgerButton" onclick="openCloseResultScreen();">☰</button>
-</div>
+  <div id="progressBar"></div>
  </div>
   
   
