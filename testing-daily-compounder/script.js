@@ -142,7 +142,7 @@ function f1(number){
         
       
         if((result - parseFloat(withdrawAmount) > 0)){
-          pres2Text.innerHTML += "Day "+(x+1)+")" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + result.toFixed(2).toLocaleString('en-US') + " " + currency_used + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "+" + random + "%"+"<br>"
+          pres2Text.innerHTML += "Day "+(x+1) + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + result.toFixed(2).toLocaleString('en-US') + " " + currency_used + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "+" + random + "%"+"<br>"
         }
         else{
             pres2Text.innerHTML += "Last Day after withdrawal: " + nocompoundResult.toFixed(2).toLocaleString('en-US') + " " + currency_used + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "+" + random + "%"+"<br>"
