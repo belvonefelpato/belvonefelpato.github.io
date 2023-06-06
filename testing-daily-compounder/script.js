@@ -30,7 +30,7 @@ window.addEventListener('load',
 
 setInterval(function(){
   //var min = document.getElementById("min").value
-  var comp_percentage = document.getElementById("comp_percentage").value
+  comp_percentage = document.getElementById("comp_percentage").value
   disclaimer = document.getElementById("disclaimer")
  
       disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(comp_percentage)) + "% daily"
@@ -38,8 +38,8 @@ setInterval(function(){
 }, 100);
 
 
-function getRandomFloat(min, comp_percentage, decimals) {
-  const str = (Math.random() * (comp_percentage - min) + min)
+function getRandomFloat(min, max, decimals) {
+  const str = (Math.random() * (max - min) + min)
   return parseFloat(str).toFixed(decimals);
 }
 
@@ -69,7 +69,7 @@ function f1(number){
   buttonResult.innerHTML = "0%";
   document.getElementById('res').value = ""
   //min = document.getElementById("min").value
-  comp_percentage = document.getElementById("comp_percentage").value
+  let max = comp_percentage * 2 //(random function calculates between two values)
   
   withdrawAmount = document.getElementById('withdrawAmount').value
   withdrawDays = document.getElementById('withdrawDays').value
@@ -118,7 +118,7 @@ function f1(number){
     } 
     
    if(result > 0 && days > 0){
-        random = getRandomFloat(min, comp_percentage, 3)
+        random = getRandomFloat(min, max, 3)
         percentages += parseFloat(random);
         nocompoundResult = result;
         result += result*random / 100
