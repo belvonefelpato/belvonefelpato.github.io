@@ -196,28 +196,28 @@ function f1(number){
       
       
         textResults.innerHTML += "======= RESULTS ========" + "<br><br>"
-        textResults.innerHTML += "Invested:" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + parseFloat(initial).toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
-        if(revenueOnly > 0) textResults.innerHTML += "After " + days + " days: +" + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0'
-        else textResults.innerHTML += "After " + days + " days: -" + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0'
+        textResults.innerHTML += "Invested" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + parseFloat(initial).toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
+        if(revenueOnly > 0) textResults.innerHTML += "Gained" + '\xa0\xa0\xa0' + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + '\xa0\xa0\xa0'
+        else textResults.innerHTML += "Lost" + '\xa0\xa0\xa0' + revenueOnly.toFixed(2).toLocaleString('en-US') +" " + currency_used + '\xa0\xa0\xa0'
         
         
         gainLossPercentage = revenueOnly * 100 /parseFloat(initial)
         if(gainLossPercentage > 0) textResults.innerHTML += "+" + gainLossPercentage.toFixed(3) + "%" + "<br>"
         else textResults.innerHTML += "-" + gainLossPercentage.toFixed(3) + "%" + "<br>"
       
-        if(withdrawCounter != 1) textResults.innerHTML += "Daily % average:" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + (percentages / days).toFixed(3) + "%" + "<br><br>" 
+        if(withdrawCounter != 1) textResults.innerHTML += "Daily average" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + (percentages / days).toFixed(3) + "%" + "<br><br>" 
       
         textResults.innerHTML += "TOTAL" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + finalGain.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br>" 
         
-        if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Amount Withdrew: " + totalWithdrew.toFixed(2).toLocaleString('en-US') + " " + currency_used
+        //if(totalWithdrew > 0) textResults.innerHTML += "<br>" + "Total Withdrew: " + totalWithdrew.toFixed(2).toLocaleString('en-US') + " " + currency_used
         if(totalWithdrew > 0 && withdrawTax > 0){
-          textResults.innerHTML += "<br>" + "Amount Withdrew after commission: " + totalAmountWithdrewAfterTax.toFixed(2).toLocaleString('en-US') + " " + currency_used
-          textResults.innerHTML += "<br>" + "Single withdraw after commission: " + singleWithdrawAfterTax.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br><br>"
+          textResults.innerHTML += "<br>" + "Total Withdrew" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + totalAmountWithdrewAfterTax.toFixed(2).toLocaleString('en-US') + " " + currency_used
+          //textResults.innerHTML += "<br>" + "Single withdraw after commission: " + singleWithdrawAfterTax.toFixed(2).toLocaleString('en-US') + " " + currency_used + "<br><br>"
         }
       
         if(withdrawTax > 0){
-          textResults.innerHTML += "Total of " + withdrawTax + "% commission paid: " + parseFloat(totalTaxPaid).toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
-          textResults.innerHTML += "Commission paid each " + withdrawDays + " days: " + parseFloat(singleTaxPaid).toFixed(2).toLocaleString('en-US') + " " + currency_used
+          textResults.innerHTML += "Fees Paid" + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + parseFloat(totalTaxPaid).toFixed(2).toLocaleString('en-US') +" " + currency_used + "<br>"
+          //textResults.innerHTML += "Commission paid each " + withdrawDays + " days: " + parseFloat(singleTaxPaid).toFixed(2).toLocaleString('en-US') + " " + currency_used
         }
       
         textResults.innerHTML += "<br>"
