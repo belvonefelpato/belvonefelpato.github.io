@@ -465,12 +465,10 @@ input:checked + .slider:before {
 }
 
 
-
-@media only screen and (max-width: 640px){
+@media only screen and (max-width: 1023px){
   .openAdvancedMode, .advancedSettingsHidden, .advancedSettingsShowed{
     display: none;
   }
-  
   .compounder, .compounderShifted{
     transform: translate(-50%, -50%) scale(1.8);
     border: none;
