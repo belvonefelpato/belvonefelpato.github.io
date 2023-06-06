@@ -225,7 +225,6 @@ button:hover{
   margin: 18px 0 0 0;
   font-weight: 600;
   font-size: 25px;
-  font-family: Rajdhani,serif;
   line-height: 30px;
   color: white;
   cursor: pointer;
@@ -291,7 +290,6 @@ button:hover{
   margin: 18px 0 0 0;
   font-weight: 600;
   font-size: 25px;
-  font-family: Rajdhani,serif;
   line-height: 30px;
   color: #fff;
   transition: all 0.5s ease ;
@@ -330,7 +328,6 @@ button:hover{
   margin: -50px 0 -50px 0px ;
   font-weight: 600;
   font-size: 24px;
-  font-family: Rajdhani,serif;
   line-height: 30px;
   color: #fff;
   cursor: pointer;
@@ -363,7 +360,6 @@ button:hover{
   margin: -50px 0 -50px 0px ;
   font-weight: 600;
   font-size: 24px;
-  font-family: Rajdhani,serif;
   line-height: 30px;
   color: #fff;
   cursor: pointer;
