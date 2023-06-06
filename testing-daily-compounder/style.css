@@ -471,7 +471,7 @@ input:checked + .slider:before {
     display: none;
   }
   .compounder, .compounderShifted{
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.9);
     border: none;
   }
 }

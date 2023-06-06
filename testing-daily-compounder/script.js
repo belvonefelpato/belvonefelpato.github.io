@@ -249,7 +249,7 @@ function switchButtons(number){
   hamButton.style.opacity = 1
   hamButton.style.cursor = "pointer"
   hamButton.removeAttribute('disabled', '')
-}, 600)
+}, 300)
 }
 else{
   button.classList.remove('closeButton');
