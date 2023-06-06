@@ -25,7 +25,7 @@ setInterval(function(){
   var max = document.getElementById("max").value * 2
   disclaimer = document.getElementById("disclaimer")
  
-      disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(max)) + "% daily"
+      disclaimer.innerHTML = "*Compounding on an average of " + (parseFloat(min)+parseFloat(max))/2 + "% daily"
 
 }, 100);
 
