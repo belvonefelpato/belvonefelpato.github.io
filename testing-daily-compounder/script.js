@@ -239,7 +239,7 @@ function switchButtons(number){
   //button.setAttribute('onclick','switchClasses(2)');
     
   setTimeout(function() {
-  button.innerHTML = "Calculate"
+  button.innerHTML = ""
 }, 130)
     
   setTimeout(function() {
@@ -257,6 +257,7 @@ else{
   button.setAttribute('onclick','preF1(1)');
   button.removeAttribute('disabled', '')
   button.style.cursor = "pointer";
+  button.innerHTML = "Calculate"
   
 }
 }
